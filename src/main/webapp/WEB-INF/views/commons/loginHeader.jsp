@@ -7,12 +7,12 @@
 			<!-- 로고 -->
 			<div class="logo">
 				<h1>
-					<a href="${pageContext.request.contextPath}/">idus</a>
+					<a href="${pageContext.request.contextPath}/">Play Cafe</a>
 				</h1>
 			</div>
 			<!-- 검색 창 -->
 			<div class="searchBar">
-				<input type="search" class="search" name="search" placeholder="작품, 작가 명을 입력 하세요.">
+				<input type="search" class="search" name="search" placeholder="원하는 메뉴를 입력하세요">
 				<button class="searchBtn" type="button">검색</button>
 			</div>
 			<!-- 사용자 프로필 -->
@@ -32,12 +32,11 @@
 		<div class="lower header">
 			<nav>
 				<ul class="gnb">
-					<li><a href="${pageContext.request.contextPath}/">메인</a></li>
-					<li><a href="${pageContext.request.contextPath}/list/recent">최신 작품</a></li>
-					<li><a href="${pageContext.request.contextPath}/">인기 작품</a></li>
-					<li><a href="${pageContext.request.contextPath}/">인기 작가</a></li>
-					<li><a href="${pageContext.request.contextPath}/blog/${auth.memberNo}">공방</a></li>
-					<li><a href="${pageContext.request.contextPath}/">문의</a></li>
+					<li><a href="${pageContext.request.contextPath}/">Event</a></li>
+					<li><a href="${pageContext.request.contextPath}/">Menu</a></li>
+					<li><a href="${pageContext.request.contextPath}/">Store</a></li>
+					<li><a href="${pageContext.request.contextPath}/">Customer Service</a></li>
+					<li><a href="${pageContext.request.contextPath}/${auth.memberNo}">MyPage</a></li>
 				</ul>
 			</nav>
 		</div>

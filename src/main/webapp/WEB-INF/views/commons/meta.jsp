@@ -42,4 +42,4 @@
 <!-- 파비콘 -->
 
 <!-- 페이지 타이틀 -->
-<title>IDUS - 새로운 쇼핑을 경험하세요.</title>
+<title>Play Cafe  즐거움의 시작 </title>

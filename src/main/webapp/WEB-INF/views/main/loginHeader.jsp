@@ -7,7 +7,7 @@
 			<!-- 로고 -->
 			<div class="logo">
 				<h1>
-					<a href="${pageContext.request.contextPath}/">idus</a>
+					<a href="${pageContext.request.contextPath}/">cafe</a>
 				</h1>
 			</div>
 			<!-- 검색 창 -->
@@ -32,11 +32,11 @@
 		<div class="lower header">
 			<nav>
 				<ul class="gnb">
-					<li><a href="${pageContext.request.contextPath}/">메인</a></li>
-					<li><a href="${pageContext.request.contextPath}/list/recent">최신 작품</a></li>
-					<li><a href="${pageContext.request.contextPath}/">인기 작품</a></li>
-					<li><a href="${pageContext.request.contextPath}/">인기 작가</a></li>
-					<li><a href="${pageContext.request.contextPath}/blog/${auth.memberNo}">공방</a></li>
+					<li><a href="${pageContext.request.contextPath}/">Event</a></li>
+					<li><a href="${pageContext.request.contextPath}/list/recent">Menu</a></li>
+					<li><a href="${pageContext.request.contextPath}/">End</a></li>
+					<li><a href="${pageContext.request.contextPath}/">Place</a></li>
+					<li><a href="${pageContext.request.contextPath}/blog/${auth.memberNo}">Q&A</a></li>
 					<li><a href="${pageContext.request.contextPath}/">문의</a></li>
 				</ul>
 			</nav>

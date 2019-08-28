@@ -17,8 +17,10 @@
 	</c:if>
 	
 	<!--background-->
-		<%@ include file="/WEB-INF/views/commons/advertisement.jsp" %>
-
+	<div>
+	메뉴 리스트 구현~~ 
+	<br><br><br><br><br>
+	</div>
 	
 	<!-- footer -->
 	<%@ include file="/WEB-INF/views/commons/footer.jsp"%>

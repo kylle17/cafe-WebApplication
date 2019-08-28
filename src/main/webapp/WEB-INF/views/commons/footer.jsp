@@ -11,10 +11,10 @@
 			</ul>
 		</div>
 		<div class="lower footer address">
-			<h2>idus</h2>
-			<p>	주소 : 서울시 금천구</p>
-			<p><a href="" class="address">http://www.idus.com</a></p>
-			<p>&copy; idus corp. All rights reserved.</p>
+			<h2>Play Cafe</h2>
+			<p>	주소 : 부산시 해운대구 봄길로</p>
+			<p><a href="" class="address">http://www.playcafe.com</a></p>
+			<p>&copy; Play Cafe corp. All rights reserved.</p>
 		</div>
 	</div>
 </footer>
