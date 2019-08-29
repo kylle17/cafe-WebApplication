@@ -7,7 +7,7 @@
 			<!-- 로고 -->
 			<div class="logo">
 				<h1>
-					<a href="${pageContext.request.contextPath}/">Play Cafe</a>
+					<a href="${pageContext.request.contextPath}/">Play Cafe ξ</a>
 				</h1>
 			</div>
 			<!-- 검색 창 -->
