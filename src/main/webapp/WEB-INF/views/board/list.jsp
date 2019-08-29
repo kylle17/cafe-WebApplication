@@ -1,13 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-        pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>목록</title>
+	<%@ include file="/WEB-INF/views/commons/meta.jsp"%>
 </head>
 <body>
+	
+	<!-- header -->
+	<c:if test="${!empty auth}">
+		<%@ include file="/WEB-INF/views/commons/loginHeader.jsp" %>
+	</c:if>
+	<c:if test="${empty auth}">
+		<%@ include file="/WEB-INF/views/commons/noLoginHeader.jsp" %>
+	</c:if>
+	
+	<!--background-->
         <table border="1">
                 <tr>
                         <th>NO</th>
@@ -28,5 +37,10 @@
                 </c:forEach>
         </table>
         <a href="<c:url value="/board/write" />">새글</a>
+	
+	
+	<!-- footer -->
+	<%@ include file="/WEB-INF/views/commons/footer.jsp"%>
+
 </body>
 </html>

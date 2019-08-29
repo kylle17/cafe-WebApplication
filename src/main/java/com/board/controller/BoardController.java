@@ -16,7 +16,7 @@ import com.board.domain.BoardVO;
 import com.board.service.BoardService;
 
 @Controller
-@RequestMapping("/main")
+@RequestMapping("/board")
 public class BoardController {
 	
 	@Autowired
@@ -27,9 +27,9 @@ public class BoardController {
 	}
 	
 	//모델 추가 전
-	@RequestMapping(value="/first")
+	@RequestMapping(value="/list")
 	public String main(Model model){
-		return "index";
+		return "board/list";
 	}
 	
 	

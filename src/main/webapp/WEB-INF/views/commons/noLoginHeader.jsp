@@ -27,7 +27,7 @@
 					<li><a href="${pageContext.request.contextPath}/">Event</a></li>
 					<li><a href="${pageContext.request.contextPath}/goods/list">Menu</a></li>
 					<li><a href="${pageContext.request.contextPath}/store/view">Store</a></li>
-					<li><a href="${pageContext.request.contextPath}/customerService/list">Customer Service</a></li>
+					<li><a href="${pageContext.request.contextPath}/board/list">Customer Service</a></li>
 				</ul>
 			</nav>
 		</div>
