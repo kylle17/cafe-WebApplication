@@ -12,6 +12,7 @@
 		<package name="com.cart.domain" />
 		<package name="com.goods.domain" />
 		<package name="com.order.domain" />
+		<package name="com.member.domain" />
 	</typeAliases>
 	
 	<typeHandlers>
