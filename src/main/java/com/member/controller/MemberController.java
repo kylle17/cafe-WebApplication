@@ -24,9 +24,9 @@ public class MemberController {
 	public String handleRegister() {
 		return "join/join";
 	}
-	@RequestMapping(value="/index", method=RequestMethod.POST)
+	@RequestMapping(value="/main/list", method=RequestMethod.POST)
 	public String Register(MemberVO memberVO) {
 		memberService.write(memberVO);
-		return "index";
+		return "main/list";
 	}
 }

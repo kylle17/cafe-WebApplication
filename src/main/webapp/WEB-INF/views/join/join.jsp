@@ -16,7 +16,7 @@
 	</c:if>
 	
 	<!--background-->
-	<form action="<c:url value="/index"/>" method="post">
+	<form action="<c:url value="/main/list"/>" method="post">
 		<input type="text" name="memId" placeholder="아이디를 입력해주세요" required /><br>
 		<input type="password" name="memPw" placeholder="비밀번호를 입력해주세요" required /><br>
 		<input type="password" name="memPwcon" placeholder="비밀번호를 확인해주세요" required /><br>
