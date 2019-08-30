@@ -15,8 +15,6 @@
 		<package name="com.member.domain" />
 	</typeAliases>
 	
-	<typeHandlers>
-		<typeHandler handler="org.apache.ibatis.type.LocalDateTimeTypeHandler" />
-	</typeHandlers>
+
 	
 </configuration>

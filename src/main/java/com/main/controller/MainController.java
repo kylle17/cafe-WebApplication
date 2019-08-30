@@ -1,4 +1,4 @@
-package com.advertisement.controller;
+package com.main.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 
-public interface AdvertisementController {
-	public String advertisementList(HttpServletRequest request, HttpServletResponse response) throws Exception;
+public interface MainController {
+	public ModelAndView advertisementList(HttpServletRequest request, HttpServletResponse response) throws Exception;
 }

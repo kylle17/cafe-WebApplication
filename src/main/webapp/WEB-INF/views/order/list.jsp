@@ -17,7 +17,13 @@
 	</c:if>
 	
 	<!--background-->
-		<%@ include file="/WEB-INF/views/commons/advertisement.jsp" %>
+
+	<div>나는 잘생겼따 </div>
+	<li><a href="${pageContext.request.contextPath}/order/reserve">예약</a></li>
+	
+
+
+
 
 	
 	<!-- footer -->
