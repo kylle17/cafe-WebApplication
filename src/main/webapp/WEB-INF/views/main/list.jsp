@@ -16,9 +16,13 @@
 		<%@ include file="/WEB-INF/views/commons/noLoginHeader.jsp" %>
 	</c:if>
 	
+	
+	
 	<!--background-->
-		<%@ include file="/WEB-INF/views/commons/advertisement.jsp" %>
-
+	<%@ include file="/WEB-INF/views/main/advertisement.jsp"%>
+	
+	
+	
 	
 	<!-- footer -->
 	<%@ include file="/WEB-INF/views/commons/footer.jsp"%>
