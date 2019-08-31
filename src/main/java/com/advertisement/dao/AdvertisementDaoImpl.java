@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
-import com.advertisement.domain.ImageFileVO;
 import com.advertisement.domain.AdvertisementVO;
 
 
@@ -17,11 +16,16 @@ public class AdvertisementDaoImpl implements AdvertisementDao{
 	@Autowired
 	private SqlSession sqlSession;
 
+	
 	@Override
-	public List<AdvertisementVO> selectAdvertisementList( ) throws DataAccessException {
+	public List<AdvertisementVO> selectAdvertisementList() throws DataAccessException {
 		List<AdvertisementVO> advertisementList=(ArrayList)sqlSession.selectList("mapper.advertisement.selectAdvertisementList");
-	   return advertisementList;	
-     
+	   return advertisementList;	    
 	}
+	
+
+	
+	
+
 	
 }

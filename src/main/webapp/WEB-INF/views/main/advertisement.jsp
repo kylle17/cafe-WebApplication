@@ -9,22 +9,12 @@
   request.setCharacterEncoding("UTF-8");
 %>  
 
-
-<div class="main_book">
-   <c:set  var="advertisement_count" value="0" />
-	<h3>베스트셀러</h3>
-	<c:forEach var="item" items="${advertisementList }">
-	   <c:set  var="goods_count" value="${advertisement_count+1 }" />
-		<div class="book">
-			<img class="link"  src="${contextPath}/resources/image/${item.fileName}"> 
-			
-				
-		</div>
-	   <c:if test="${advertisement_count==15   }">
-         <div class="book">
-           <font size=20> <a href="#">more</a></font>
-         </div>
-     </c:if>
-  </c:forEach>
-  </div>
+	<img class="linst" src="${contextPath}/resources/image/커피1.jpg">
+	<div class="main_book">야호
+		<c:forEach var="item" items="${advertisementList }">
+			<div class="book">야호
+				<img class="linst"  src="${contextPath}/resources/image/${item.fileName }.jpg"> 								
+			</div>
+  		</c:forEach>
+  	</div>
  

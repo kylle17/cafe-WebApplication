@@ -7,30 +7,18 @@
 <!-- 리절트 맵 정의 -->	
 	<resultMap id="advertisementResult" type="AdvertisementVO">
 		<result property="advertisement_id" column="advertisement_id" />
-		<result property="advertisement_date" column="advertisement_date" />
-
-		
-
+	    <result property="fileName" column="fileName" />
+	    <result property="fileType" column="fileType" />		
+		<result property="advertisement_credate" column="advertisement_credate" />
 	</resultMap>	
 
-	<resultMap id="imageResult" type="ImageFileVO">
-	   <result property="advertisement_id" column="advertisement_id" />
-	   <result property="fileName" column="fileName" />
-	   <result property="reg_id" column="reg_id" />
-	   <result property="image_id" column="image_id" />
-	   <result property="fileType" column="fileType" />
-	</resultMap>
-	
 
 	
    
       <select id="selectAdvertisementList" parameterType="String" resultMap="advertisementResult"   >
         <![CDATA[
-         select t.*
-          from(
-			select g.*,d.fileName from advertisement g, advertisement_detail_image d
-        	where g.advertisement_id=d.advertisement_id 
-            order by g.advertisement_creDate desc)  t
+        select *
+		from advertisement
 	    ]]>
 	</select>
 	
