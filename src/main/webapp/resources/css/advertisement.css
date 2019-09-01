@@ -1,0 +1,13 @@
+.advertisement {
+	float:left;
+	text-align: center;
+}
+
+.advertisement_main {
+
+}
+
+.advertisement_sub {	
+	margin: 7%;
+	float: left;
+}

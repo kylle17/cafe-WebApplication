@@ -23,6 +23,7 @@
 <script src="${pageContext.request.contextPath}/resources/js/autoLogin.js"></script>  <!-- 자동 로그인 세션 삭제 -->
 
 <!-- css -->
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/advertisement.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/common.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/main.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/loginForm.css">

@@ -9,22 +9,20 @@
   request.setCharacterEncoding("UTF-8");
 %>  
 
-
-<div class="main_book">
-   <c:set  var="advertisement_count" value="0" />
-	<h3>베스트셀러</h3>
-	<c:forEach var="item" items="${advertisementList }">
-	   <c:set  var="goods_count" value="${advertisement_count+1 }" />
-		<div class="book">
-			<img class="link"  src="${contextPath}/resources/image/${item.fileName}"> 
-			
-				
-		</div>
-	   <c:if test="${advertisement_count==15   }">
-         <div class="book">
-           <font size=20> <a href="#">more</a></font>
-         </div>
-     </c:if>
-  </c:forEach>
-  </div>
+	<div class="advertisement">
+		<c:forEach var="item" items="${advertisementList }">
+			<c:if test="${item.fileType=='main'   }">
+			<div class="advertisement_main">
+				<img width="1344" height="1008"
+				class="link"  src="${contextPath}/resources/image/${item.fileName }.jpg"> 								
+			</div>
+			</c:if>
+			<c:if test="${item.fileType!='main'   }">
+			<div class="advertisement_sub">
+				<img width="540" height="564"
+				class="link"  src="${contextPath}/resources/image/${item.fileName }.jpg"> 								
+			</div>
+			</c:if>			
+  		</c:forEach>
+  	</div>
  

@@ -15,9 +15,10 @@ public class AdvertisementServiceImpl implements AdvertisementService{
 	AdvertisementDao advertisementDao;
 		
 	
-	public List<AdvertisementVO> advertisementList() throws Exception {
-		List<AdvertisementVO> advertisementList=advertisementDao.selectAdvertisementList();
+	public List advertisementList() throws Exception {
+			List<AdvertisementVO> advertisementList = advertisementDao.selectAdvertisementList();
 		return advertisementList;
+		
 	}
 
 
