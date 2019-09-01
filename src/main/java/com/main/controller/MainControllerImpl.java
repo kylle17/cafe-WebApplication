@@ -33,8 +33,5 @@ public class MainControllerImpl implements MainController{
 		List<AdvertisementVO> advertisementList = advertisementService.advertisementList();
 		mav.addObject("advertisementList", advertisementList);
 		return mav;
-	
-
 	}
-
 }

@@ -17,7 +17,7 @@
 			</div>
 			<!-- 사용자 프로필 -->
 			<div class="profile">
-				<a href="${pageContext.request.contextPath}/login">로그인</a>
+				<a href="${pageContext.request.contextPath}/login/login">로그인</a>
 				<a href="${pageContext.request.contextPath}/join/join">회원가입</a>
 			</div>
 		</div>
