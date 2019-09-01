@@ -20,4 +20,8 @@ public class MemberServiceImpl implements MemberService {
 	public void write(MemberVO memberVO) {
 		memberDao.insert(memberVO);
 	}
+	@Override
+	public MemberVO selectById(String memId) {
+		return memberDao.selectById(memId);
+	}
 }

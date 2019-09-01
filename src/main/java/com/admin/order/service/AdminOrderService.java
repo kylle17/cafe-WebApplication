@@ -1,5 +1,11 @@
 package com.admin.order.service;
 
-public class AdminOrderService {
+import java.util.List;
+
+import com.admin.order.domain.AdminOrderListVO;
+
+public interface AdminOrderService {
+	
+	public abstract List<AdminOrderListVO> selectOrderList();
 
 }

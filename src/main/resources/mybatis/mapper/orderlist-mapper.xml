@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="orderlist">
+	<!--데이터 조회 -->
+	<select id="selectOrderList" parameterType="String" resultType="com.admin.order.domain.AdminOrderListVO">
+		SELECT * from order_product
+	</select>
+</mapper>
+
+

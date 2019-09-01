@@ -9,7 +9,7 @@ import com.member.domain.MemberVO;
 import com.member.service.MemberService;
 
 @Controller
-/* @RequestMapping("/join") */
+@RequestMapping("/join")
 public class MemberController {
 	
 	@Autowired
@@ -20,13 +20,16 @@ public class MemberController {
 	}
 	
 	//회원 가입 요청에 동작될 메서드
-	@RequestMapping(value="/join/join")
+	/* @RequestMapping(value="/join/join") */
+	@RequestMapping(value="/join")
 	public String handleRegister() {
 		return "join/join";
 	}
-	@RequestMapping(value="/main/list", method=RequestMethod.POST)
-	public String Register(MemberVO memberVO) {
+
+	/* @RequestMapping(value="/join/joinSuccess", method=RequestMethod.POST) */
+	@RequestMapping(value="/joinSuccess", method=RequestMethod.POST)
+	public String register(MemberVO memberVO) {
 		memberService.write(memberVO);
-		return "main/list";
+		return "join/joinSuccess";
 	}
 }
