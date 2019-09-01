@@ -17,10 +17,10 @@
 			</div>
 			<!-- 사용자 프로필 -->
 			<div class="profile">
-				<span class="userName">${auth.nickName} 님</span>
+				<span class="userName">${auth.memName} 님</span>
 				<!-- 마이페이지로 이동 -->
 				<a href="${pageContext.request.contextPath}/myPage" title="마이 페이지"> 
-					<img class="thumbnail" src="${auth.thumbnail}" alt="썸네일" />
+					<img class="thumbnail" <%-- src="${auth.thumbnail}" --%> alt="썸네일" />
 				</a>
 				<!-- 장바구니로 이동 --> 
 				<a href="${pageContext.request.contextPath}/myPage/shoppingBag" title="장바구니">
@@ -36,7 +36,7 @@
 					<li><a href="${pageContext.request.contextPath}/">Menu</a></li>
 					<li><a href="${pageContext.request.contextPath}/">Store</a></li>
 					<li><a href="${pageContext.request.contextPath}/">Customer Service</a></li>
-					<li><a href="${pageContext.request.contextPath}/${auth.memberNo}">MyPage</a></li>
+					<li><a href="${pageContext.request.contextPath}/<%-- ${auth.memId} --%>">MyPage</a></li>
 				</ul>
 			</nav>
 		</div>

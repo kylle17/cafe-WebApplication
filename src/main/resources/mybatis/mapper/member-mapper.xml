@@ -9,4 +9,8 @@
 		values (#{memId}, #{memPw}, #{memName}, #{memGender}, #{memBirth}, #{memPhone}, #{memEmail}, #{memPostCode}, #{memRoadName}, #{memDetail})
 	</insert>
 	
+	<!-- 로그인할 때 id가 필요 -->
+	<select id="selectById" parameterType="String" resultType="memberVO">
+		select * from MEMBERINFO where memId=#{memId}	
+	</select>
 </mapper>
