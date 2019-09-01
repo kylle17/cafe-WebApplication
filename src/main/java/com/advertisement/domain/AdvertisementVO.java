@@ -5,8 +5,8 @@ import java.sql.Date;
 
 public class AdvertisementVO {
 	private int advertisement_id;
-	private int advertisement_fileName;
-	private int advertisement_fileType;
+	private String fileName;
+	private String fileType;
 	private Date advertisement_credate;
 	public int getAdvertisement_id() {
 		return advertisement_id;
@@ -14,17 +14,17 @@ public class AdvertisementVO {
 	public void setAdvertisement_id(int advertisement_id) {
 		this.advertisement_id = advertisement_id;
 	}
-	public int getAdvertisement_fileName() {
-		return advertisement_fileName;
+	public String getFileName() {
+		return fileName;
 	}
-	public void setAdvertisement_fileName(int advertisement_fileName) {
-		this.advertisement_fileName = advertisement_fileName;
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
 	}
-	public int getAdvertisement_fileType() {
-		return advertisement_fileType;
+	public String getFileType() {
+		return fileType;
 	}
-	public void setAdvertisement_fileType(int advertisement_fileType) {
-		this.advertisement_fileType = advertisement_fileType;
+	public void setFileType(String fileType) {
+		this.fileType = fileType;
 	}
 	public Date getAdvertisement_credate() {
 		return advertisement_credate;
@@ -34,6 +34,8 @@ public class AdvertisementVO {
 	}
 	
 	
+	
+
 
 	
 	

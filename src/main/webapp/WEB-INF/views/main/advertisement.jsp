@@ -9,12 +9,20 @@
   request.setCharacterEncoding("UTF-8");
 %>  
 
-	<img class="linst" src="${contextPath}/resources/image/커피1.jpg">
-	<div class="main_book">야호
+	<div class="advertisement">
 		<c:forEach var="item" items="${advertisementList }">
-			<div class="book">야호
-				<img class="linst"  src="${contextPath}/resources/image/${item.fileName }.jpg"> 								
+			<c:if test="${item.fileType=='main'   }">
+			<div class="advertisement_main">
+				<img width="1344" height="1008"
+				class="link"  src="${contextPath}/resources/image/${item.fileName }.jpg"> 								
 			</div>
+			</c:if>
+			<c:if test="${item.fileType!='main'   }">
+			<div class="advertisement_sub">
+				<img width="540" height="564"
+				class="link"  src="${contextPath}/resources/image/${item.fileName }.jpg"> 								
+			</div>
+			</c:if>			
   		</c:forEach>
   	</div>
  

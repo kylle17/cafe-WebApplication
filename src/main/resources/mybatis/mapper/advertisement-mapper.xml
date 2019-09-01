@@ -17,8 +17,9 @@
    
       <select id="selectAdvertisementList" parameterType="String" resultMap="advertisementResult"   >
         <![CDATA[
-        select *
+        select * 
 		from advertisement
+		order by advertisement_id asc
 	    ]]>
 	</select>
 	
