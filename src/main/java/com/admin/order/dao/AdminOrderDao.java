@@ -18,4 +18,27 @@ public class AdminOrderDao {
 		public List<AdminOrderListVO> selectList() {
 			return sqlSession.selectList("orderListmapper.selectList");
 		}
+		
+		
+		//기능별 조회
+		public List<AdminOrderListVO> selectOrderState1() {
+			return sqlSession.selectList("orderListmapper.selectOrderState1");
+		}
+		
+		public List<AdminOrderListVO> selectOrderState2() {
+			return sqlSession.selectList("orderListmapper.selectOrderState2");
+		}
+		
+		public List<AdminOrderListVO> selectOrderState3() {
+			return sqlSession.selectList("orderListmapper.selectOrderState3");
+		}
+		
+		public List<AdminOrderListVO> selectOrderState_date() {
+			return sqlSession.selectList("orderListmapper.selectOrderState_date");
+		}
+		
+		public List<AdminOrderListVO> selectOrderState_name() {
+			return sqlSession.selectList("orderListmapper.selectOrderState_name");
+		}
+		
 }
