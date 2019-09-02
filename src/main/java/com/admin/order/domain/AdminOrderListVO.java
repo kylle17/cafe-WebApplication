@@ -1,7 +1,5 @@
 package com.admin.order.domain;
 
-import java.util.Date;
-
 public class AdminOrderListVO {
 
 		private String regdate;
