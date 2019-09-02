@@ -14,7 +14,7 @@
 		<package name="com.goods.domain" />
 		<package name="com.order.domain" />
 		<package name="com.member.domain" />
-		
+		<package name="com.mypage.domain" />
 	</typeAliases>
 	
 

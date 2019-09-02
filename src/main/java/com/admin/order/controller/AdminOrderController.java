@@ -9,8 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.admin.order.service.AdminOrderService;
 
 
-@Controller
-@RequestMapping("/admin/order")
+
 public class AdminOrderController {
 	
 	@Autowired

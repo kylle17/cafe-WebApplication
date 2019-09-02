@@ -11,7 +11,7 @@ import com.admin.order.domain.AdminOrderListVO;
 @Service
 public class AdminOrderServiceImpl implements AdminOrderService{
 	
-		@Autowired
+		@Autowired(required=false)
 		AdminOrderDao adminOrderDao;
 		
 		//상품목록 서비스

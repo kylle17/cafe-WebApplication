@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.orderHistory">
+<!-- 리절트 맵 정의 -->	
+	<resultMap id="orderHistoryResult" type="MypageVO">
+		<result property="order_id" column="order_id" />
+		<result property="order_num" column="order_num" />
+		<result property="order_date" column="order_date" />
+		<result property="product_id" column="product_id" />
+		<result property="product_title" column="product_title" />
+		<result property="fileName" column="fileName" />
+		<result property="product_price" column="product_price" />
+		<result property="delivery_state" column="delivery_state" />
+		<result property="memid" column="memid" />
+	</resultMap>	
+
+	
+   
+      <select id="selectOrderHistoryList" parameterType="String" resultMap="orderHistoryResult"   >
+        <![CDATA[
+        select * 
+		from order
+		where memId=#{memId}
+		order by order_num asc
+	    ]]>
+	</select>
+	
+	
+	
+
+</mapper>

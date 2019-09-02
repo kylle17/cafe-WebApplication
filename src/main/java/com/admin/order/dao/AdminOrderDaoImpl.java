@@ -11,7 +11,7 @@ import com.admin.order.domain.AdminOrderListVO;
 @Repository
 public abstract class AdminOrderDaoImpl implements AdminOrderDao{
 
-	@Autowired
+	@Autowired(required=false)
 	SqlSession sqlSession;
 	
 	@Override
