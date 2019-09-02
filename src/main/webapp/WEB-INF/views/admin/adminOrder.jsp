@@ -9,6 +9,11 @@
 </head>
 <body>
 	<h2>관리자 : 주문조회 </h2>
+	
+	<input type="button" value="주문조회">
+	<input type="button" value="결제완료">
+	<input type="button" value="배송준비중">
+	
 		<table>
 				<tr>
 					<td>주문일자</td>
@@ -31,5 +36,6 @@
 				</tr>
 			</c:forEach>
 		</table>
+		
 </body>
 </html>

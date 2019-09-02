@@ -16,27 +16,34 @@
  	<select id="selectOrderState1" resultType="com.admin.order.domain.AdminOrderListVO" >
     	select * from SYSTEM.ORDERLIST where ORDER_STATE='주문접수'
     </select>  
-     
-    <!-- 
-    
+   
     <select id="selectOrderState2" resultType="com.admin.order.domain.AdminOrderListVO" >
     	select * from SYSTEM.ORDERLIST where ORDER_STATE='결제완료'
-    	select count(*) as cnt(만들어질 카운트 애트리뷰트) from SYSTEM.ORDERLIST where ORDER_STATE='주문접수'
     </select>
     
     <select id="selectOrderState3" resultType="com.admin.order.domain.AdminOrderListVO" >
     	select * from SYSTEM.ORDERLIST where ORDER_STATE='배송준비중'
     </select>
     
-    <select id="selectOrderState_date" resultType="com.admin.order.domain.AdminOrderListVO" >
-    	select * from SYSTEM.ORDERLIST where ORDER_DATE >= #{date1} AND ORDER_DATE <= #{date2}
-    </select>
+    
+    <!--
     
     <select id="selectOrderState_name" resultType="com.admin.order.domain.AdminOrderListVO" >
     	select * from SYSTEM.ORDERLIST where MEMID = #{MEMID}
     </select>
     
-     -->
+    
+    
+    <select id="selectOrderState_date" resultType="com.admin.order.domain.AdminOrderListVO" >
+    	select * from SYSTEM.ORDERLIST where ORDER_DATE >= #{date1} AND ORDER_DATE <= #{date2}
+    	
+    	select count(*) as cnt(만들어질 카운트 애트리뷰트) from SYSTEM.ORDERLIST where ORDER_STATE='주문접수'
+    	
+    </select>
+    
+    -->
+    
+    
     
     
     </mapper>
