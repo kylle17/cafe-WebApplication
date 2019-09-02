@@ -2,18 +2,18 @@ package com.admin.order.domain;
 
 public class AdminOrderListVO {
 
-		private String regdate;
+		private String order_date;
 		private int orderNum;
 		private String memID;
 		private String order_method;
 		private int order_price;
 		private String order_state;
 		
-		public String getRegdate() {
-			return regdate;
+		public String getOrder_date() {
+			return order_date;
 		}
-		public void setRegdate(String regdate) {
-			this.regdate = regdate;
+		public void setOrder_date(String order_date) {
+			this.order_date = order_date;
 		}
 		public int getOrderNum() {
 			return orderNum;
