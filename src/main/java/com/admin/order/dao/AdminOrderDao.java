@@ -8,10 +8,10 @@ import org.springframework.stereotype.Repository;
 
 import com.admin.order.domain.AdminOrderListVO;
 
-@Repository
+//@Repository
 public class AdminOrderDao {
 	
-		@Autowired
+//		@Autowired
 		private SqlSession sqlSession;
 		
 		//아이템 번호를 이용하여 작품 전체를 검색

@@ -16,10 +16,10 @@ import com.admin.order.service.AdminOrderListService;
 
 
  
-@Controller
+//@Controller
 public class AdminOrderController {
 	
-	@Autowired
+//	@Autowired
 	private AdminOrderListService adminorderlistservice;
     
     @RequestMapping(value="/adminOrderList")

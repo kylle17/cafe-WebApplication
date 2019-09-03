@@ -7,7 +7,7 @@
 	<typeAliases>
 		<package name="com.admin.sales.domain" />
 		<package name="com.admin.stock.domain" />
-		<package name="com.admin.order.domain" />
+		<!-- <package name="com.admin.order.domain" /> -->
 		<package name="com.advertisement.domain" />
 		<package name="com.board.domain" />
 		<package name="com.cart.domain" />

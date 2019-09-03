@@ -8,11 +8,11 @@ import org.springframework.stereotype.Service;
 import com.admin.order.dao.AdminOrderDao;
 import com.admin.order.domain.AdminOrderListVO;
 
-@Service
+//@Service
 //서비스는 기능이다. dao로 가져온 데이터를 li로 정리한다.
 public class AdminOrderListService {
 	
-	@Autowired
+//	@Autowired
 	private AdminOrderDao adminorderdao;
 	
 	public List<AdminOrderListVO> selectitemList() {
