@@ -48,6 +48,7 @@ public class AdminOrderListVO {
 		public void setOrder_state(String order_state) {
 			this.order_state = order_state;
 		}
+		
 			
 		
 }

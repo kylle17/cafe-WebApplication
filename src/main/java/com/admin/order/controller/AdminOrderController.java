@@ -2,8 +2,10 @@ package com.admin.order.controller;
 
 import java.util.List;
 
+import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 
+import org.omg.CORBA.Request;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,54 +24,44 @@ public class AdminOrderController {
 	@Autowired
 	private AdminOrderListService adminorderlistservice;
     
-    @RequestMapping(value="/adminOrderList")
+	
+	@RequestMapping(value="/adminOrderList")
     @ResponseBody
-	public ModelAndView recentHandler(ModelAndView mav) {
-		//데이터를 받아서 해당 페이지로 데이터를 보낸다
-    	mav.setViewName("admin/adminOrder");
-    	mav.addObject("AdminOrderListVO",adminorderlistservice.selectitemList());
-    	System.out.println(adminorderlistservice.selectitemList());
-		return mav;
+	public ModelAndView AdminOrderListHandler(ModelAndView mav, ServletRequest request) {
+		String orderUrl = ((ServletRequest)request).getParameter("orderUrl");
+    	System.out.println(orderUrl);
+    	if(orderUrl==null)
+    	{
+    		System.out.println("아직첫번째주문목록"+orderUrl);
+    		mav.setViewName("/admin/adminOrder");
+    		mav.addObject("AdminOrderListVO",adminorderlistservice.selectitemList());
+    		return mav;
+    	}
+    	else
+    	{
+    		mav.setViewName("/admin/"+orderUrl);
+    		System.out.println("두번째이프문실행하냐?");
+    		if(orderUrl.equals("adminOrderState1"))
+    		{
+    			System.out.println("넘어왔냐"+ orderUrl);
+    			orderUrl="주문접수";
+    		}
+    		else if(orderUrl.equals("adminOrderState2"))
+    			orderUrl="결제완료";
+    		else if(orderUrl.equals("adminOrderState3"))
+    			orderUrl="배송준비중";
+    		mav.addObject("AdminOrderListVO",adminorderlistservice.selectitemList(orderUrl));
+    		return mav;
+    	}
+	} 
+	
+	@RequestMapping(value="/adminDetailList")
+    public ModelAndView AdminOrderDetailHandler(ModelAndView mav1, ServletRequest request1) {
+		String orderNum=request1.getParameter("ORDERNUM");
+		mav1.setViewName("/admin/adminOrderDetail");	
+		mav1.addObject("AdminOrderListVO",adminorderlistservice.selectitemOrderNum(orderNum));
+		return mav1;
 	}
-    
-    
-    @RequestMapping(value="/adminOrderState1")
-    public ModelAndView recentHandler1(ModelAndView mav) {
-    	mav.setViewName("admin/adminOrderState1");
-    	mav.addObject("AdminOrderListVO",adminorderlistservice.selectitemState1());
-    	return mav;
-    } 
-    
-//    @RequestMapping(value="/adminOrderState2")
-//    public ModelAndView recentHandler2(ModelAndView mav) {
-//    	mav.setViewName("admin/adminOrderState2");
-//    	mav.addObject("AdminOrderListVO",adminorderlistservice.selectitemState2());
-//    	return mav;
-//    } 
-//    
-//    @RequestMapping(value="/adminOrderState3")
-//    public ModelAndView recentHandler3(ModelAndView mav) {
-//    	mav.setViewName("admin/adminOrderState3");
-//    	mav.addObject("AdminOrderListVO",adminorderlistservice.selectitemState3());
-//    	return mav;
-//    } 
-//    
-//    @RequestMapping(value="/adminOrderState_date")
-//    public ModelAndView recentHandler4(ModelAndView mav) {
-//    	mav.setViewName("admin/adminOrderState_date");
-//    	mav.addObject("AdminOrderListVO",adminorderlistservice.selectitemState_date());
-//    	return mav;
-//    } 
-//    
-//    @RequestMapping(value="/adminOrderState_name")
-//    public ModelAndView recentHandler5(ModelAndView mav) {
-//    	mav.setViewName("admin/adminOrderState_name");
-//    	mav.addObject("AdminOrderListVO",adminorderlistservice.selectitemState_name());
-//    	return mav;
-//    } 
-////    
-    
-    
     
    
     	

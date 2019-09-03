@@ -18,9 +18,25 @@ public class AdminOrderListService {
 	@Autowired
 	private AdminOrderDao adminorderdao;
 	
+//주문상태조회
+	
+	//전체목록
 	public List<AdminOrderListVO> selectitemList() {
 		List<AdminOrderListVO> result = adminorderdao.selectList();
 		return result;
+	}
+	
+	//조건에맞는 목록
+	public List<AdminOrderListVO> selectitemList(String orderUrl) {
+		List<AdminOrderListVO> result = adminorderdao.selectList1(orderUrl);
+		return result;
+	}
+
+//주문번호에 대한 상세 페이지
+	public List<AdminOrderListVO> selectitemOrderNum(String orderNum) {
+		// TODO Auto-generated method stub
+		List<AdminOrderListVO> result1 = adminorderdao.selectOrderNum(orderNum);
+		return result1;
 	}
 	
 //	public ModelAndView selectitemList(ModelAndView mav) {
@@ -41,10 +57,10 @@ public class AdminOrderListService {
 //		return mav;
 //	}
 
-	public List<AdminOrderListVO> selectitemState1() {
-		List<AdminOrderListVO> result = adminorderdao.selectOrderState1();
-		return result;
-	}
+//	public List<AdminOrderListVO> selectitemState1() {
+//		List<AdminOrderListVO> result = adminorderdao.selectOrderState1();
+//		return result;
+//	}
 //	
 //	public List<AdminOrderListVO> selectitemState2() {
 //		List<AdminOrderListVO> result = adminorderdao.selectOrderState2();
@@ -65,6 +81,7 @@ public class AdminOrderListService {
 //		List<AdminOrderListVO> result = adminorderdao.selectOrderState_name();
 //		return result;
 //	}
+
 	
 	
 }
