@@ -17,26 +17,27 @@
 			</div>
 			<!-- 사용자 프로필 -->
 			<div class="profile">
-				<span class="userName">${auth.memName} 님</span>
+				<span class="userName"><b>${auth.memName} 님</b></span>
 				<!-- 마이페이지로 이동 -->
-				<a href="${pageContext.request.contextPath}/myPage" title="마이 페이지"> 
-					<img class="thumbnail" <%-- src="${auth.thumbnail}" --%> alt="썸네일" />
+				<a href="${pageContext.request.contextPath}/myPage" title="마이 페이지"> 마이페이지 
+					<%-- <img class="thumbnail" src="${auth.thumbnail}" alt="썸네일" /> --%>
 				</a>
 				<!-- 장바구니로 이동 --> 
 				<a href="${pageContext.request.contextPath}/myPage/shoppingBag" title="장바구니">
 					<i class="fas fa-shopping-cart" class="icon"></i>
 				</a>
-				<a href="${pageContext.request.contextPath}/logout">로그아웃</a>
+				<a href="${pageContext.request.contextPath}/logout/logout">로그아웃</a>
 			</div>
 		</div>
 		<div class="lower header">
 			<nav>
 				<ul class="gnb">
-					<li><a href="${pageContext.request.contextPath}/">Event</a></li>
-					<li><a href="${pageContext.request.contextPath}/">Menu</a></li>
-					<li><a href="${pageContext.request.contextPath}/">Store</a></li>
-					<li><a href="${pageContext.request.contextPath}/">Customer Service</a></li>
-					<li><a href="${pageContext.request.contextPath}/mypage/orderHistory?memId=${auth.memId }">MyPage</a></li>
+						<li><a href="${pageContext.request.contextPath}/">Event</a></li>
+					<li><a href="${pageContext.request.contextPath}/goods/list">Menu</a></li>
+					<li><a href="${pageContext.request.contextPath}/order/list">order</a></li>
+					<li><a href="${pageContext.request.contextPath}/store/view">Store</a></li>
+					<li><a href="${pageContext.request.contextPath}/board/list">Customer Service</a></li>
+					<li><a href="${pageContext.request.contextPath}/<%-- ${auth.memId} --%>">MyPage</a></li>
 				</ul>
 			</nav>
 		</div>

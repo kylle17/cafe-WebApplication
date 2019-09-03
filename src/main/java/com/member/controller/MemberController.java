@@ -20,13 +20,11 @@ public class MemberController {
 	}
 	
 	//회원 가입 요청에 동작될 메서드
-	/* @RequestMapping(value="/join/join") */
 	@RequestMapping(value="/join")
 	public String handleRegister() {
 		return "join/join";
 	}
 
-	/* @RequestMapping(value="/join/joinSuccess", method=RequestMethod.POST) */
 	@RequestMapping(value="/joinSuccess", method=RequestMethod.POST)
 	public String register(MemberVO memberVO) {
 		memberService.write(memberVO);

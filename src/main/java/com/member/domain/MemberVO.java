@@ -75,7 +75,4 @@ public class MemberVO {
 	public void setMemDetail(String memDetail) {
 		this.memDetail = memDetail;
 	}
-	public boolean matchPassword(String memPw) {
-		return this.memPw.equals(memPw);
-	}
 }
