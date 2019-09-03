@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.admin.order.dao.AdminOrderDao;
 import com.admin.order.domain.AdminOrderListVO;
 
-
+@Service
 //서비스는 기능이다. dao로 가져온 데이터를 li로 정리한다.
 public class AdminOrderListService {
 	

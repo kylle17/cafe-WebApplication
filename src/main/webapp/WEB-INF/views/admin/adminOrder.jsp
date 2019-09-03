@@ -30,7 +30,7 @@
 				<tr>
 					<td>${a.order_date}</td>
 					<td>
-					<a href="${path}/admin/adminOrderDetail.jsp?ORDERNUM=${a.orderNum}">${a.orderNum}</a>
+					<a href="${pageContext.request.contextPath}/admin/adminOrderDetail.do?ORDERNUM=${a.orderNum}">${a.orderNum}</a>
 					</td>
 					<td>${a.memID}</td>
 					<td>${a.order_method}</td>

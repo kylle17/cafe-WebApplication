@@ -7,15 +7,15 @@ import org.apache.ibatis.session.SqlSession;
 import com.admin.order.domain.AdminOrderListVO;
 
 
-public abstract class AdminOrderDaoImpl implements AdminOrderDao{
-
-	SqlSession sqlSession;
-	
-	@Override
-	public List<AdminOrderListVO> selectOrderState1() {
-		// TODO Auto-generated method stub
-		return sqlSession.selectList("orderlist.selectOrderList");
-	}
-
-
-}
+//public abstract class AdminOrderDaoImpl implements AdminOrderDao{
+//
+//	SqlSession sqlSession;
+//	
+//	@Override
+//	public List<AdminOrderListVO> selectOrderState1() {
+//		// TODO Auto-generated method stub
+//		return sqlSession.selectList("orderlist.selectOrderList");
+//	}
+//
+//
+//}
