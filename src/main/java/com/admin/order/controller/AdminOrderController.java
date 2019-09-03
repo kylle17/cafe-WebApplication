@@ -40,33 +40,33 @@ public class AdminOrderController {
     	return mav;
     } 
     
-    @RequestMapping(value="/adminOrderState2")
-    public ModelAndView recentHandler2(ModelAndView mav) {
-    	mav.setViewName("admin/adminOrderState2");
-    	mav.addObject("AdminOrderListVO",adminorderlistservice.selectitemState2());
-    	return mav;
-    } 
-    
-    @RequestMapping(value="/adminOrderState3")
-    public ModelAndView recentHandler3(ModelAndView mav) {
-    	mav.setViewName("admin/adminOrderState3");
-    	mav.addObject("AdminOrderListVO",adminorderlistservice.selectitemState3());
-    	return mav;
-    } 
-    
-    @RequestMapping(value="/adminOrderState_date")
-    public ModelAndView recentHandler4(ModelAndView mav) {
-    	mav.setViewName("admin/adminOrderState_date");
-    	mav.addObject("AdminOrderListVO",adminorderlistservice.selectitemState_date());
-    	return mav;
-    } 
-    
-    @RequestMapping(value="/adminOrderState_name")
-    public ModelAndView recentHandler5(ModelAndView mav) {
-    	mav.setViewName("admin/adminOrderState_name");
-    	mav.addObject("AdminOrderListVO",adminorderlistservice.selectitemState_name());
-    	return mav;
-    } 
+//    @RequestMapping(value="/adminOrderState2")
+//    public ModelAndView recentHandler2(ModelAndView mav) {
+//    	mav.setViewName("admin/adminOrderState2");
+//    	mav.addObject("AdminOrderListVO",adminorderlistservice.selectitemState2());
+//    	return mav;
+//    } 
+//    
+//    @RequestMapping(value="/adminOrderState3")
+//    public ModelAndView recentHandler3(ModelAndView mav) {
+//    	mav.setViewName("admin/adminOrderState3");
+//    	mav.addObject("AdminOrderListVO",adminorderlistservice.selectitemState3());
+//    	return mav;
+//    } 
+//    
+//    @RequestMapping(value="/adminOrderState_date")
+//    public ModelAndView recentHandler4(ModelAndView mav) {
+//    	mav.setViewName("admin/adminOrderState_date");
+//    	mav.addObject("AdminOrderListVO",adminorderlistservice.selectitemState_date());
+//    	return mav;
+//    } 
+//    
+//    @RequestMapping(value="/adminOrderState_name")
+//    public ModelAndView recentHandler5(ModelAndView mav) {
+//    	mav.setViewName("admin/adminOrderState_name");
+//    	mav.addObject("AdminOrderListVO",adminorderlistservice.selectitemState_name());
+//    	return mav;
+//    } 
 //    
     
     

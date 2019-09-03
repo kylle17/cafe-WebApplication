@@ -12,7 +12,7 @@
 <!-- background -->
 	<h2>관리자 : 주문조회 </h2>
 	
-	<input type="button" onclick="location.href='${contextPath}/adminOrderState1'" value="주문조회">
+	<input type="button" onclick="location.href='${pageContext.request.contextPath}/adminOrderState1'" value="주문조회">
 	<input type="button" value="결제완료">
 	<input type="button" value="배송준비중">
 	

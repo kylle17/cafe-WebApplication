@@ -19,27 +19,34 @@ public class AdminOrderDao {
 			return sqlSession.selectList("orderListmapper.selectList");
 		}
 		
+		public List<AdminOrderListVO> selectList(String string) {
+			// TODO Auto-generated method stub
+			return null;
+		}
 		
-		//기능별 조회
+//		//기능별 조회
 		public List<AdminOrderListVO> selectOrderState1() {
 			return sqlSession.selectList("orderListmapper.selectOrderState1");
 		}
+//		
+//		public List<AdminOrderListVO> selectOrderState2() {
+//			return sqlSession.selectList("orderListmapper.selectOrderState2");
+//		}
+//		
+//		public List<AdminOrderListVO> selectOrderState3() {
+//			return sqlSession.selectList("orderListmapper.selectOrderState3");
+//		}
+//		
+//		public List<AdminOrderListVO> selectOrderState_date() {
+//			return sqlSession.selectList("orderListmapper.selectOrderState_date");
+//		}
+//		
+//		public List<AdminOrderListVO> selectOrderState_name() {
+//			return sqlSession.selectList("orderListmapper.selectOrderState_name");
+//		}
+
+
 		
-		public List<AdminOrderListVO> selectOrderState2() {
-			return sqlSession.selectList("orderListmapper.selectOrderState2");
-		}
-		
-		public List<AdminOrderListVO> selectOrderState3() {
-			return sqlSession.selectList("orderListmapper.selectOrderState3");
-		}
-		
-		public List<AdminOrderListVO> selectOrderState_date() {
-			return sqlSession.selectList("orderListmapper.selectOrderState_date");
-		}
-		
-		public List<AdminOrderListVO> selectOrderState_name() {
-			return sqlSession.selectList("orderListmapper.selectOrderState_name");
-		}
 		
 		//검색갯수 조회
 		
