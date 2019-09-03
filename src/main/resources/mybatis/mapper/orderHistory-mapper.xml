@@ -3,6 +3,7 @@
 	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
+ 	
 <mapper namespace="mapper.orderHistory">
 <!-- 리절트 맵 정의 -->	
 	<resultMap id="orderHistoryResult" type="MypageVO">
@@ -14,21 +15,22 @@
 		<result property="fileName" column="fileName" />
 		<result property="product_price" column="product_price" />
 		<result property="delivery_state" column="delivery_state" />
-		<result property="memid" column="memid" />
+		<result property="memId" column="memId" />
 	</resultMap>	
 
 	
    
       <select id="selectOrderHistoryList" parameterType="String" resultMap="orderHistoryResult"   >
         <![CDATA[
-        select * 
-		from order
-		where memId=#{memId}
-		order by order_num asc
+			select * from "ORDER"
+            where MEMID=#{memId}
+            order by ORDER_NUM asc
 	    ]]>
 	</select>
 	
-	
+
+
+
 	
 
 </mapper>

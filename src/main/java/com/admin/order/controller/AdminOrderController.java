@@ -16,14 +16,13 @@ import com.admin.order.service.AdminOrderListService;
 
 
  
-@Controller
+
 public class AdminOrderController {
 	
-	@Autowired
+	
 	private AdminOrderListService adminorderlistservice;
     
-    @RequestMapping(value="/adminOrderList")
-    @ResponseBody
+
 	public ModelAndView recentHandler(ModelAndView mav) {
 		//데이터를 받아서 해당 페이지로 데이터를 보낸다
     	mav.setViewName("admin/adminOrder");

@@ -19,15 +19,30 @@
 	
 	
 	<!--background-->
-	마이페이지 스스
-	<div class="orderHistory">
-		<c:forEach var="item" items="${orderHistoryList }">
-			<div>${item.product_title }			
-			</div>
+<article>	
+	<table class="orderHistory">
+		<tr style="background:#EAEAEA" >
+			<td>주문번호</td>
+			<td>주문일자</td>
+			<td>주문상품</td>
+			<td>주문상품</td>
+			<td>주문가격</td>			
+			<td>주문상태</td>
+			<td>주문취소</td>
+		</tr>
+		<c:forEach var="item" items="${orderHistory }">
+			<tr>
+			<td>${item.order_num }</td>
+			<td>${item.order_date }</td>
+			<td>${item.product_title }</td>
+			<td>${item.fileName }</td>
+			<td>${item.product_price }</td>
+			<td>${item.delivery_state }</td>			
+			</tr>
   		</c:forEach>
-  	</div>
-	
-	
+  	</table>
+ </article> 	
+
 	
 	
 	<!-- footer -->

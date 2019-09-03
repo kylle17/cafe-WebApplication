@@ -36,7 +36,7 @@
 					<li><a href="${pageContext.request.contextPath}/">Menu</a></li>
 					<li><a href="${pageContext.request.contextPath}/">Store</a></li>
 					<li><a href="${pageContext.request.contextPath}/">Customer Service</a></li>
-					<li><a href="${pageContext.request.contextPath}/mypage/orderHistory?memId=${auth.memId}">MyPage</a></li>
+					<li><a href="${pageContext.request.contextPath}/mypage/orderHistory?memId=${auth.memId }">MyPage</a></li>
 				</ul>
 			</nav>
 		</div>

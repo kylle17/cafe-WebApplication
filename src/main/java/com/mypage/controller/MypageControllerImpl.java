@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.member.domain.MemberVO;
@@ -23,7 +24,7 @@ public class MypageControllerImpl {
 	private MypageServiceImpl mypageServiceImpl;
 	
 	@RequestMapping(value="/orderHistory")
-	public ModelAndView orderHistory(HttpServletRequest request , HttpServletResponse response) {
+	public ModelAndView orderHistory(@RequestParam("memId") String memId,HttpServletRequest request , HttpServletResponse response) {
 		
 		ModelAndView mov = new ModelAndView();
 		//String viewName=(String)request.getAttribute("viewName");  //임시로 삭제 
@@ -32,7 +33,6 @@ public class MypageControllerImpl {
 //		HttpSession session = request.getSession();		
 //		MemberVO memberVO = (MemberVO)session.getAttribute("memberInfo");
 //		String memId = memberVO.getMemId();
-		String memId = request.getParameter("memId");
 		List<MypageVO> orderHistory = mypageServiceImpl.selectOrderHistoryList(memId);
 		
 		mov.addObject("orderHistory", orderHistory);

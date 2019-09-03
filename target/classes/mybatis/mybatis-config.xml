@@ -17,6 +17,8 @@
 		<package name="com.mypage.domain" />
 	</typeAliases>
 	
+		
+
 
 	
 </configuration>
