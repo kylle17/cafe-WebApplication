@@ -16,7 +16,13 @@
  	<select id="selectOrderState1" resultType="com.admin.order.domain.AdminOrderListVO" >
     	select * from SYSTEM.ORDERLIST where ORDER_STATE='주문접수'
     </select>  
+<<<<<<< HEAD
    
+=======
+     
+    
+    
+>>>>>>> 0c4f57fb9e5d7ccc5da1be54348349b85e072c78
     <select id="selectOrderState2" resultType="com.admin.order.domain.AdminOrderListVO" >
     	select * from SYSTEM.ORDERLIST where ORDER_STATE='결제완료'
     </select>
@@ -33,6 +39,7 @@
     </select>
     
     
+<<<<<<< HEAD
     
     <select id="selectOrderState_date" resultType="com.admin.order.domain.AdminOrderListVO" >
     	select * from SYSTEM.ORDERLIST where ORDER_DATE >= #{date1} AND ORDER_DATE <= #{date2}
@@ -44,6 +51,8 @@
     -->
     
     
+=======
+>>>>>>> 0c4f57fb9e5d7ccc5da1be54348349b85e072c78
     
     
     </mapper>

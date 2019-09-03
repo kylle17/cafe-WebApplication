@@ -1,13 +1,17 @@
 package com.member.controller;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
+import com.member.domain.LoginCommand;
 import com.member.domain.MemberVO;
 import com.member.service.MemberService;
 
@@ -23,26 +27,45 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value="/login")
-	public String handleLogin() {
+	public String handleLogin(Model model, //view로 값을 넘김
+			@CookieValue(value="REMEMBER", required=false) Cookie rememberId) {
+		if(rememberId != null) {
+			model.addAttribute("loginId", rememberId.getValue()); //login.jsp의 ${loginId}에 rememberId.getValue() 값을 넣음
+			model.addAttribute("check", 1);
+		}
 		return "login/login";
 	}
 	
 	@RequestMapping(value="/loginSuccess", method=RequestMethod.POST)
-	public String login(@RequestParam(value = "memId") String memId, @RequestParam(value = "memPw") String memPw,
-			MemberVO memberVO, HttpSession session) { //jsp의 memId와 memPw를 request함
+	public String login(LoginCommand loginCommand, //커멘드객체(jsp에서 넘어온 값들)
+			HttpSession session, //Session 사용
+			HttpServletResponse response) { //Cookie 사용할 때
 		
-		MemberVO list = memberService.selectById(memId);
-		if(list.getMemId() == null || list.getMemPw() == null) {
-			return "login/login";
-		}
-		else {
-			if(list.getMemId().equals(memId) && list.getMemPw().equals(memPw)) {
+		try {
+			MemberVO list = memberService.selectById(loginCommand.getMemId()); //memId에 대한 정보값이 list에 저장
+			
+			if(list.getMemPw().equals(loginCommand.getMemPw())) { //html에서 입력한 값과 db에서 가져온 값이 같으면
+				//session 설정
 				session.setAttribute("auth", list); //session 설정(속성이름, 속성 값)
+				
+				//Cookie 설정
+				Cookie cookie = new Cookie("REMEMBER", loginCommand.getMemId()); //Cookie 설정
+				
+				cookie.setPath("/");
+				if(loginCommand.isRememberId()) {
+					cookie.setMaxAge(60*60*24*30); //한달
+				}
+				else {
+					cookie.setMaxAge(0);
+				}
+				response.addCookie(cookie);
 				return "login/loginSuccess";
 			}
-			else {
+			else { //html에서 입력한 값과 db에서 가져온 값이 다르면
 				return "login/login";
 			}
+		} catch (NullPointerException e) {
+			return "/";
 		}
 	}
 }

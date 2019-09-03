@@ -1,13 +1,21 @@
+
+
 .advertisement {
-	float:left;
-	text-align: center;
+	width: 500;
+	boarder: 5px;
+	display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .advertisement_main {
-
+	width: 1344;
+	height: 1008;
+	flex-shrink: 1;
 }
 
-.advertisement_sub {	
-	margin: 7%;
-	float: left;
+.advertisement_sub {
+		flex-shrink: 1;
+	
 }

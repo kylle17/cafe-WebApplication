@@ -39,6 +39,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/dropMember.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/myPage.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/myOrder.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/orderHistory.css">
 
 <!-- 파비콘 -->
 
