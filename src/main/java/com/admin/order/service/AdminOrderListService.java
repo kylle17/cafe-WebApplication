@@ -10,9 +10,10 @@ import com.admin.order.domain.AdminOrderListVO;
 
 
 //서비스는 기능이다. dao로 가져온 데이터를 li로 정리한다.
+//@Service
 public class AdminOrderListService {
 	
-	@Autowired
+//	@Autowired
 	private AdminOrderDao adminorderdao;
 	
 	public List<AdminOrderListVO> selectitemList() {

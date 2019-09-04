@@ -16,7 +16,7 @@ import com.admin.order.service.AdminOrderListService;
 
 
  
-
+//@Controller
 public class AdminOrderController {
 	
 	

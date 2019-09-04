@@ -17,7 +17,7 @@
     	select * from SYSTEM.ORDERLIST where ORDER_STATE='주문접수'
     </select>  
      
-    
+    <!-- 
     
     <select id="selectOrderState2" resultType="com.admin.order.domain.AdminOrderListVO" >
     	select * from SYSTEM.ORDERLIST where ORDER_STATE='결제완료'
@@ -36,7 +36,7 @@
     	select * from SYSTEM.ORDERLIST where MEMID = #{MEMID}
     </select>
     
-    
+     -->
     
     
     </mapper>
