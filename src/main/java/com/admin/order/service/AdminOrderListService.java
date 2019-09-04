@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.admin.order.dao.AdminOrderDao;
 import com.admin.order.domain.AdminOrderListVO;
+import com.admin.order.domain.AdminOrderNumDeliveryVO;
 
 //서비스는 기능이다. dao로 가져온 데이터를 li로 정리한다.
 @Service
@@ -33,8 +34,8 @@ public class AdminOrderListService {
 	}
 
 //주문번호에 대한 상세 페이지
-	public List<AdminOrderListVO> selectitemOrderNum(String orderNum) {
-		List<AdminOrderListVO> result1 = adminorderdao.selectOrderNum(orderNum);
+	public List<AdminOrderNumDeliveryVO> selectitemOrderNum(String orderNum) {
+		List<AdminOrderNumDeliveryVO> result1 = adminorderdao.selectOrderNum(orderNum);
 		return result1;
 	}
 	
