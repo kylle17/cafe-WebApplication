@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+.side {
+	width: 150px;
+	height: 700px;
+	float: left;
+	border:1px solid black;	
+	
+}
+

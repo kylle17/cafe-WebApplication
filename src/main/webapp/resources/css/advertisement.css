@@ -2,7 +2,6 @@
 
 .advertisement {
 	width: 500;
-	boarder: 5px;
 	display: flex;
     flex-direction: row;
     flex-wrap: wrap;

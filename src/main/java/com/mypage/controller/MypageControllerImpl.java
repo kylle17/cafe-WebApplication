@@ -28,7 +28,8 @@ public class MypageControllerImpl {
 		
 		ModelAndView mov = new ModelAndView();
 		//String viewName=(String)request.getAttribute("viewName");  //임시로 삭제 
-		String viewName = "mypage/orderHistory";
+		String viewName = "mypage/main";
+		mov.setViewName(viewName);
 		
 //		HttpSession session = request.getSession();		
 //		MemberVO memberVO = (MemberVO)session.getAttribute("memberInfo");

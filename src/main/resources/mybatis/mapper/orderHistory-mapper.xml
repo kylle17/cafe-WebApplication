@@ -22,15 +22,13 @@
    
       <select id="selectOrderHistoryList" parameterType="String" resultMap="orderHistoryResult"   >
         <![CDATA[
-			select * from "ORDER"
+			select * from "ORDER" 
             where MEMID=#{memId}
             order by ORDER_NUM asc
 	    ]]>
 	</select>
 	
 
-
-
-	
-
 </mapper>
+
+
