@@ -18,10 +18,16 @@
  	
  			<!-- 주문번호에 대한 고객정보 및 배송정보 조회 -->
  	<select id="selectOrderNum" resultType="com.admin.order.domain.AdminOrderListVO" >
- 	  	select *(배송테이블에서 불러올 정보) from delivery where where ORDERNUM=#{orderNum}
+ 	  	select *(배송테이블에서 불러올 정보) from SYSTEM.DELIVERY where where ORDERNUM=#{orderNum}
+ 	  	운송장번호 / 처리상태 / 발송일자 / 완료일자 / 
     	select *(주문목록테이블에서 불러올정보) from SYSTEM.ORDERLIST where ORDERNUM=#{orderNum}
+    	주문번호 / 주문일자 / 
+    	select *(결제정보테이블에서 불러올정보) from SYSTEM.ORDERLIST where ORDERNUM=#{orderNum}
+    	결제계좌 / 결제방법 / 에스크로여부 / 입금인
     	select *(고객정보테이블에서 불러올정보) from SYSTEM.ORDERLIST where ORDERNUM=#{orderNum}
     	를 조인한 결과 표시.
+    	
+    	select 
     	<!-- 조건:주문번호  -->
     </select> 
  
