@@ -6,7 +6,7 @@
 
 	
 	<!--background-->
-<article class="orderHistory">
+
 	<br><br>
 	<div>
 	주문내역 
@@ -36,6 +36,6 @@
 			</tr>
   		</c:forEach>
   	</table>
- </article> 	
+	
 
 	

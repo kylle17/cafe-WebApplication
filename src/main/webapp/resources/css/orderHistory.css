@@ -1,14 +1,8 @@
-.orderHistory {
-	display: flex;
-	border:1px solid black;
-	flex-direction: column;	
-    text-align: center;  /*하위 중앙정렬*/
-}
 
 .orderHistory_table {
 	border:1px solid black;
 	display: flex;
-    justify-content: center;  /*자기 중앙정렬*/
+    justify-content: center;  
 }
 
 .orderHistory_table td {

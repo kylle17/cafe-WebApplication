@@ -32,7 +32,7 @@
 		<div class="lower header">
 			<nav>
 				<ul class="gnb">
-						<li><a href="${pageContext.request.contextPath}/">Event</a></li>
+					<li><a href="${pageContext.request.contextPath}/">Event</a></li>
 					<li><a href="${pageContext.request.contextPath}/goods/list">Menu</a></li>
 					<li><a href="${pageContext.request.contextPath}/order/list">order</a></li>
 					<li><a href="${pageContext.request.contextPath}/store/view">Store</a></li>

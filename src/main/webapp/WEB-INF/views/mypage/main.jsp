@@ -9,6 +9,7 @@
 	<%@ include file="/WEB-INF/views/commons/meta.jsp"%>
 </head>
 <body>
+	<div class="flex_container">
 	
 	<!-- header -->
 	<c:if test="${!empty auth}">
@@ -19,27 +20,30 @@
 	</c:if>
 	
 	
+	<section class="content">
 	<!--side-->
-	<nav class="side">    
-		<li>
-			<ul>
-				<li><a href="${contextPath}/mypage/myDetailInfo.do">회원정보관리</a></li>
-	            <br>
-	            <li><a href="${contextPath}/mypage/listMyOrderHistory.do">주문내역</a></li>
-				<br>
-				<li><a href="#">회원탈퇴</a></li>
-			</ul>
-		</li>
+	<nav>  		
+		<ul>
+			<li><a href="${contextPath}/mypage/myDetailInfo.do">회원정보관리</a></li>
+            <li><a href="${contextPath}/mypage/listMyOrderHistory.do">주문내역</a></li>
+			<li><a href="#">회원탈퇴</a></li>
+		</ul>		
 	</nav>
 	
-	<!--background-->
+	<!--main-->
+	<main>
 	<%@ include file="/WEB-INF/views/mypage/orderHistory.jsp"%>
+	</main>
 
-
-	
+	<!-- side -->
+	<aside>
+	<div> 뭐시기 거시기 	</div>
+	</aside>
+	</section>
 	
 	<!-- footer -->
 	<%@ include file="/WEB-INF/views/commons/footer.jsp"%>
-
+	
+	</div>
 </body>
 </html>
