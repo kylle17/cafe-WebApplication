@@ -1,6 +1,7 @@
 package com.member.domain;
 
 import org.apache.ibatis.type.Alias;
+import org.hibernate.validator.constraints.Length;
 
 @Alias("memberVO")
 public class MemberVO {
