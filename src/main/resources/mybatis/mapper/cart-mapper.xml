@@ -5,61 +5,61 @@
 <mapper namespace="cart">
     <!-- 1. 장바구니 추가 -->
     <insert id="insertCart">
-        INSERT INTO tbl_cart(
-            cart_id, user_id, product_id, amount
+        INSERT INTO cart(
+            cart_id, memID, PRODUCTID, amount
         ) VALUES (
-            seq_cart.NEXTVAL, #{userId}, #{productId}, #{amount}
+            seq_cart.NEXTVAL, #{memID}, #{PRODUCTID}, #{amount}
         )
     </insert>
     <!-- 2. 장바구니 목록 -->
     <select id="listCart" resultType="com.cart.domain.CartVO">
         SELECT
             c.cart_id AS cartId, 
-            c.user_id AS userId,
-            p.product_id As productId,
-            m.user_name AS userName, 
+            c.memID AS memID,
+            p.PRODUCTID As PRODUCTID,
+            m.memName AS memName, 
             p.product_name AS productName, 
             c.amount, 
             p.product_price AS productPrice, 
             (product_price * amount) money
         FROM
-            tbl_member m, tbl_product p, tbl_cart c
-        WHERE m.user_id = c.user_id
-            AND p.product_id = c.product_id
-            AND c.user_id = #{userId}
+            tbl_member m, PRODUCT p, cart c
+        WHERE m.memID = c.memID
+            AND p.PRODUCTID = c.PRODUCTID
+            AND c.memID = #{memID}
         ORDER BY
             c.cart_id
     </select>
     <!-- 3. 장바구니 전체 금액 -->
     <select id="sumMoney" resultType="int">
         SELECT NVL(SUM(product_price * amount), 0) money
-        FROM tbl_cart c, tbl_product p
-        WHERE c.product_id = p.product_id AND c.user_id = #{userId}
+        FROM cart c, PRODUCT p
+        WHERE c.PRODUCTID = p.PRODUCTID AND c.memID = #{memID}
     </select>
     <!-- 4. 장바구니 수정 -->
     <update id="modifyCart">
-        UPDATE tbl_cart    
+        UPDATE cart    
         SET amount = #{amount} 
-        WHERE user_id= #{userId} 
-        AND product_id = #{productId}
+        WHERE memID= #{memID} 
+        AND PRODUCTID = #{PRODUCTID}
     </update>
     <!-- 5. 장바구니 삭제 -->
     <delete id="deleteCart">
-        DELETE FROM tbl_cart 
+        DELETE FROM cart 
         WHERE cart_id = #{cartId}
     </delete>
     <!-- 6. 장바구니에 동일한 상품 레코드 확인 -->
     <select id="countCart" resultType="int">
         SELECT COUNT(*)
-        FROM tbl_cart
-        WHERE user_id= #{userId} 
-        AND product_id = #{productId}
+        FROM cart
+        WHERE memID= #{memID} 
+        AND PRODUCTID = #{PRODUCTID}
     </select>
     <!-- 7. 장바구니에 동일한 상품이 존재하면 수정 -->
     <update id="updateCart">
-        UPDATE tbl_cart 
+        UPDATE cart 
         SET amount = amount + #{amount} 
-        WHERE user_id= #{userId} 
-        AND product_id = #{productId}
+        WHERE memID= #{memID} 
+        AND PRODUCTID = #{PRODUCTID}
     </update>
 </mapper>
