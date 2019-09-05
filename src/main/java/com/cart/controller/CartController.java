@@ -57,7 +57,7 @@ public class CartController {
 	        map.put("sumMoney", sumMoney);        // 장바구니 전체 금액
 	        map.put("fee", fee);                 // 배송금액
 	        map.put("allSum", sumMoney+fee);    // 주문 상품 전체 금액
-	        mav.setViewName("shop/cartList");    // view(jsp)의 이름 저장
+	        mav.setViewName("cart/cartList");    // view(jsp)의 이름 저장
 	        mav.addObject("map", map);            // map 변수 저장
 	        return mav;
 	    }
@@ -66,7 +66,7 @@ public class CartController {
 	    @RequestMapping("delete.do")
 	    public String delete(@RequestParam int cartId){
 	        cartService.delete(cartId);
-	        return "redirect:/shop/cart/list.do";
+	        return "redirect:/cart/list.do";
 	    }
 
 	    // 4. 장바구니 수정
@@ -83,6 +83,6 @@ public class CartController {
 	            cartService.modifyCart(vo);
 	        }
 
-	        return "redirect:/shop/cart/list.do";
+	        return "redirect:/cart/list.do";
 	    }
 }
