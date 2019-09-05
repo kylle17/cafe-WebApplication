@@ -17,7 +17,7 @@
 	
 	<!--background-->
 	<form action="<c:url value="loginSuccess"/>" method="post">
-		<input type="text" name="memId" placeholder="아이디를 입력해주세요" value="${loginId} autofocus required"/><br>
+		<input type="text" name="memId" placeholder="아이디를 입력해주세요" value="${loginId}" autofocus required/><br>
 		<input type="password" name="memPw" placeholder="비밀번호를 입력해주세요" required /><br>
 		<c:choose>
 			<c:when test="${check == 1}">

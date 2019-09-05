@@ -19,11 +19,24 @@ public class AdminOrderDao {
 			return sqlSession.selectList("orderListmapper.selectList");
 		}
 		
-		
-		//기능별 조회
-		public List<AdminOrderListVO> selectOrderState1() {
-			return sqlSession.selectList("orderListmapper.selectOrderState1");
+		public List<AdminOrderListVO> selectList1(String orderUrl) {
+			System.out.println(orderUrl);
+//			List<AdminOrderListVO> select = sqlSession.selectList("orderListmapper.selectList1",orderUrl);
+			return sqlSession.selectList("orderListmapper.selectList1",orderUrl);
 		}
+
+//주문번호에대한 상세페이지
+		
+		public List<AdminOrderListVO> selectOrderNum(String orderNum) {
+			// TODO Auto-generated method stub
+			return sqlSession.selectList("orderListmapper.selectOrderNum",orderNum);
+		}
+
+		
+//		//기능별 조회
+//		public List<AdminOrderListVO> selectOrderState1() {
+//			return sqlSession.selectList("orderListmapper.selectOrderState1");
+//		}
 //		
 //		public List<AdminOrderListVO> selectOrderState2() {
 //			return sqlSession.selectList("orderListmapper.selectOrderState2");
@@ -40,7 +53,10 @@ public class AdminOrderDao {
 //		public List<AdminOrderListVO> selectOrderState_name() {
 //			return sqlSession.selectList("orderListmapper.selectOrderState_name");
 //		}
-//		
+
+
+		
+		
 		//검색갯수 조회
 		
 }
