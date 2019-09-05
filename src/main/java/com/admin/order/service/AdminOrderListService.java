@@ -11,12 +11,11 @@ import org.springframework.web.servlet.ModelAndView;
 import com.admin.order.dao.AdminOrderDao;
 import com.admin.order.domain.AdminOrderListVO;
 
-@Service
 //서비스는 기능이다. dao로 가져온 데이터를 li로 정리한다.
-//@Service
+@Service
 public class AdminOrderListService {
 	
-//	@Autowired
+	@Autowired
 	private AdminOrderDao adminorderdao;
 	
 //주문상태조회
@@ -35,7 +34,6 @@ public class AdminOrderListService {
 
 //주문번호에 대한 상세 페이지
 	public List<AdminOrderListVO> selectitemOrderNum(String orderNum) {
-		// TODO Auto-generated method stub
 		List<AdminOrderListVO> result1 = adminorderdao.selectOrderNum(orderNum);
 		return result1;
 	}
