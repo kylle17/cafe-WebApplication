@@ -24,9 +24,9 @@
 	<!--side-->
 	<nav>  		
 		<ul>
-			<li><a href="${contextPath}/mypage/memUpdate?memId=${auth.memId }&sideMenu='memUpdate'">회원정보관리</a></li>
-            <li><a href="${contextPath}/mypage/orderHistory?memId=${auth.memId }&sideMenu='orderHistory'">주문내역</a></li>
-			<li><a href="${contextPath}/mypage/memDelete?memId=${auth.memId }&sideMenu='memDelete'">회원탈퇴</a></li>
+			<li><a href="${contextPath}/mypage/memUpdate?memId=${auth.memId }&sideMenu=memUpdate">회원정보관리</a></li>
+            <li><a href="${contextPath}/mypage/orderHistory?memId=${auth.memId }&sideMenu=orderHistory">주문내역</a></li>
+			<li><a href="${contextPath}/mypage/memDelete?memId=${auth.memId }&sideMenu=memDelete">회원탈퇴</a></li>
 		</ul>		
 	</nav>
 	
