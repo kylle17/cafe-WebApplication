@@ -1,6 +1,21 @@
 /*회원가입할 때 필요한 script*/
 function joinCheck(){
-	if(document.joinForm.memPw.value != document.joinForm.memPwcon.value){
+	var memPw = document.joinForm.memPw.value;
+	var memPwcon = document.joinForm.memPwcon.value;
+	var memPwRepExp = /^[0-9a-z]{4,20}$/i; //비밀번호 정규식(소문자, 숫자 총 4~20자)
+	if(memPw == ""){
+		alert("비밀번호를 입력하시오.");
+		document.joinForm.memPw.focus();
+		return false;
+	}
+	
+	if(!memPwRepExp.test(memPw)){
+    	alert("소문자와 숫자로 이루어진 4~20자리의 비밀번호를 입력하시오.");
+		document.joinForm.memPw.focus();
+		return false;
+    }
+	
+	if(memPw != memPwcon){
 		alert("비밀번호가 일치하지 않습니다.");
 		document.joinForm.memPwcon.focus();
 		return false;

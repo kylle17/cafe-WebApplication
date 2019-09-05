@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CookieValue;
@@ -26,14 +27,17 @@ public class LoginController {
 		this.memberService = memberService;
 	}
 	
+	@Autowired
+	BCryptPasswordEncoder pwEncoder;
+	
 	@RequestMapping(value="/login")
 	public String handleLogin(Model model, //view로 값을 넘김
 			@CookieValue(value="REMEMBER", required=false) Cookie rememberId) {
-		if(rememberId != null) {
+		if(rememberId != null) { //Cookie가 있을 때
 			model.addAttribute("loginId", rememberId.getValue()); //login.jsp의 ${loginId}에 rememberId.getValue() 값을 넣음
 			model.addAttribute("check", 1);
 		}
-		return "login/login";
+		return "login/login";		
 	}
 	
 	@RequestMapping(value="/loginSuccess", method=RequestMethod.POST)
@@ -43,8 +47,9 @@ public class LoginController {
 		
 		try {
 			MemberVO list = memberService.selectById(loginCommand.getMemId()); //memId에 대한 정보값이 list에 저장
+			boolean passwordMatch = pwEncoder.matches(loginCommand.getMemPw(), list.getMemPw()); //BCryptPasswordEncoder.matches를 사용하여 html에서 가져온 값과 db에서 가져온 값을 match시킨다.
 			
-			if(list.getMemPw().equals(loginCommand.getMemPw())) { //html에서 입력한 값과 db에서 가져온 값이 같으면
+			if(passwordMatch) { //html에서 입력한 값과 db에서 가져온 값이 같으면
 				//session 설정
 				session.setAttribute("auth", list); //session 설정(속성이름, 속성 값)
 				
