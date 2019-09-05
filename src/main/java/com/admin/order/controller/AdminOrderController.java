@@ -23,7 +23,6 @@ public class AdminOrderController {
 	
 	@Autowired
 	private AdminOrderListService adminorderlistservice;
-    
 	
 	@RequestMapping(value="/adminOrderList")
     @ResponseBody
@@ -32,7 +31,6 @@ public class AdminOrderController {
     	System.out.println(orderUrl);
     	if(orderUrl==null)
     	{
-    		System.out.println("아직첫번째주문목록"+orderUrl);
     		mav.setViewName("/admin/adminOrder");
     		mav.addObject("AdminOrderListVO",adminorderlistservice.selectitemList());
     		return mav;
@@ -40,10 +38,8 @@ public class AdminOrderController {
     	else
     	{
     		mav.setViewName("/admin/"+orderUrl);
-    		System.out.println("두번째이프문실행하냐?");
     		if(orderUrl.equals("adminOrderState1"))
     		{
-    			System.out.println("넘어왔냐"+ orderUrl);
     			orderUrl="주문접수";
     		}
     		else if(orderUrl.equals("adminOrderState2"))
@@ -53,16 +49,13 @@ public class AdminOrderController {
     		mav.addObject("AdminOrderListVO",adminorderlistservice.selectitemList(orderUrl));
     		return mav;
     	}
-	} 
+	}
 	
-	@RequestMapping(value="/adminDetailList")
+	@RequestMapping(value="/adminOrderDetail")
     public ModelAndView AdminOrderDetailHandler(ModelAndView mav1, ServletRequest request1) {
 		String orderNum=request1.getParameter("ORDERNUM");
 		mav1.setViewName("/admin/adminOrderDetail");	
-		mav1.addObject("AdminOrderListVO",adminorderlistservice.selectitemOrderNum(orderNum));
+		mav1.addObject("AdminOrderNumDeliveryVO",adminorderlistservice.selectitemOrderNum(orderNum));
 		return mav1;
 	}
-    
-   
-    	
 }

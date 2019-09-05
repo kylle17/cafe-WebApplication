@@ -1,7 +1,5 @@
 package com.admin.order.domain;
 
-import org.apache.ibatis.type.Alias;
-
 //@Alias("adminOrderListVO")
 public class AdminOrderListVO {
 

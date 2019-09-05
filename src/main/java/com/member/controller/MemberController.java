@@ -1,8 +1,7 @@
 package com.member.controller;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +22,9 @@ public class MemberController {
 		this.memberService = memberService;
 	}
 	
+	@Autowired
+	BCryptPasswordEncoder pwEncoder;
+	
 	//회원 가입 요청에 동작될 메서드
 	@RequestMapping(value="/join")
 	public String handleRegister() {
@@ -31,6 +33,9 @@ public class MemberController {
 
 	@RequestMapping(value="/joinSuccess", method=RequestMethod.POST)
 	public String register(MemberVO memberVO) {
+		String pw = memberVO.getMemPw(); //memberVO에 저장된 password를 꺼내옴
+		String passwordEncoder = pwEncoder.encode(pw); //꺼내온 password를 암호화시킴
+		memberVO.setMemPw(passwordEncoder); //암호화된 password를 다시 memberVO에 넣음
 		memberService.write(memberVO);
 		return "join/joinSuccess";
 	}
