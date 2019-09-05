@@ -18,10 +18,17 @@
 			<!-- 사용자 프로필 -->
 			<div class="profile">
 				<span class="userName"><b>${auth.memName} 님</b></span>
-				<!-- 마이페이지로 이동 -->
-				<a href="${pageContext.request.contextPath}/myPage" title="마이 페이지"> 마이페이지 
+				<!-- 마이페이지로 이동 or 관리자 모드 -->
+				<c:if test="${auth.memId eq 'system'}">
+					<a href="${pageContext.request.contextPath}/admin/adminAd?memId=${auth.memId }&sideMenu=adminAd">관리페이지</a>
+				</c:if>
+				<c:if test="${auth.memId ne 'system' }"> 
+					<a href="${pageContext.request.contextPath}/mypage/orderHistory?memId=${auth.memId }&sideMenu='memUpdate'" title="마이 페이지"> 마이페이지 
 					<%-- <img class="thumbnail" src="${auth.thumbnail}" alt="썸네일" /> --%>
 				</a>
+				</c:if>
+				
+				
 				<!-- 장바구니로 이동 --> 
 				<a href="${pageContext.request.contextPath}/myPage/shoppingBag" title="장바구니">
 					<i class="fas fa-shopping-cart" class="icon"></i>
@@ -32,12 +39,11 @@
 		<div class="lower header">
 			<nav>
 				<ul class="gnb">
-						<li><a href="${pageContext.request.contextPath}/">Event</a></li>
+					<li><a href="${pageContext.request.contextPath}/">Event</a></li>
 					<li><a href="${pageContext.request.contextPath}/goods/list">Menu</a></li>
 					<li><a href="${pageContext.request.contextPath}/order/list">order</a></li>
 					<li><a href="${pageContext.request.contextPath}/store/view">Store</a></li>
 					<li><a href="${pageContext.request.contextPath}/board/list">Customer Service</a></li>
-					<li><a href="${pageContext.request.contextPath}/<%-- ${auth.memId} --%>">MyPage</a></li>
 				</ul>
 			</nav>
 		</div>

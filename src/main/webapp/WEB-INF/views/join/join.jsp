@@ -18,9 +18,9 @@
 	
 	<!--background-->
 	<form action="<c:url value="joinSuccess"/>" method="post" name="joinForm" onsubmit="return joinCheck()">
-		<input type="text" name="memId" placeholder="아이디를 입력해주세요" autofocus required/> <input type="button" value="아이디 중복확인" onclick="idCheck(this.form.memId.value)"><br>
-		<input type="password" name="memPw" placeholder="비밀번호를 입력해주세요" required/><br>
-		<input type="password" name="memPwcon" placeholder="비밀번호를 확인해주세요" required/><br>
+		<input type="text" name="memId" placeholder="아이디를 입력해주세요" maxlength="10" autofocus/> <input type="button" value="아이디 중복확인" onclick="idCheck(this.form.memId.value)"><br>
+		<input type="password" name="memPw" placeholder="비밀번호를 입력해주세요"/><br>
+		<input type="password" name="memPwcon" placeholder="비밀번호를 확인해주세요"/><br>
 		<input type="text" name="memName" placeholder="이름을 입력해주세요" required/><br>
 		<input type="radio" name="memGender" value="M" checked>남 <input type="radio" name="memGender" value="F" >여<br>
 		<input type="number" name="memBirth" placeholder="생년월일 입력해주세요(ex.19940101)" maxlength="8" required/><br>
