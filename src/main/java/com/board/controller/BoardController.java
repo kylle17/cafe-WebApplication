@@ -13,24 +13,21 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.support.SessionStatus;
 
 import com.board.domain.BoardVO;
-import com.board.service.BoardService;
+import com.board.service.BoardServiceImpl;
 
 @Controller
-@RequestMapping("/board")
+@RequestMapping(value="/board")
 public class BoardController {
 	
 	@Autowired
-	private BoardService boardService;
+	private BoardServiceImpl boardService;
 		
-	public void setBoardService(BoardService boardService){
-		this.boardService = boardService;
-	}
 	
-	//모델 추가 전
-	@RequestMapping(value="/list")
-	public String main(Model model){
-		return "board/list";
-	}
+//	//모델 추가 전
+//	@RequestMapping(value="/list")
+//	public String main(Model model){
+//		return "board/list";
+//	}
 	
 	
 	//모델 추가 전
@@ -41,7 +38,7 @@ public class BoardController {
 	}*/
 	
 	//모델 추가 후
-	@RequestMapping(value="/board/list")
+	@RequestMapping(value="/list")
 	public String list(Model model){
 		model.addAttribute("boardList", boardService.list());
 		return "/board/list";
@@ -76,13 +73,13 @@ public class BoardController {
 	
 	//예외 처리 추가
 	//새 글 작성을 위한 요청을 처리
-	@RequestMapping(value="/board/write", method=RequestMethod.GET)
+	@RequestMapping(value="/write", method=RequestMethod.GET)
 	public String write(Model model){
 		model.addAttribute("boardVO", new BoardVO());
 		return "/board/write";
 	}
 	//새 글 등록을 위한 요청을 처리 
-	@RequestMapping(value="/board/write", method=RequestMethod.POST)
+	@RequestMapping(value="/write", method=RequestMethod.POST)
 	public String write(@Valid BoardVO boardVO, BindingResult bindingResult){
 		if(bindingResult.hasErrors()){
 			return "/board/write";

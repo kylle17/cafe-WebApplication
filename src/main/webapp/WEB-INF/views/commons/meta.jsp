@@ -40,6 +40,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/myPage.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/myOrder.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/orderHistory.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/side.css">
 
 <!-- 파비콘 -->
 

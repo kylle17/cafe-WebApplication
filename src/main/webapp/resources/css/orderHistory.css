@@ -1,13 +1,13 @@
-.orderHistory {
-	height:1000px;
-	width: 700px;	
+
+.orderHistory_table {
+	border:1px solid black;
 	display: flex;
-    justify-content: center;
+    justify-content: center;  
 }
 
-.orderHistroy td {
+.orderHistory_table td {
 	height: 50px;
 	width: 100px;
-	flex-shrink: 1;
+	border:1px solid black;
 	text-align: center;
 }
