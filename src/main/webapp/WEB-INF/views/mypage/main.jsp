@@ -24,15 +24,24 @@
 	<!--side-->
 	<nav>  		
 		<ul>
-			<li><a href="${contextPath}/mypage/myDetailInfo.do">회원정보관리</a></li>
-            <li><a href="${contextPath}/mypage/listMyOrderHistory.do">주문내역</a></li>
-			<li><a href="#">회원탈퇴</a></li>
+			<li><a href="${contextPath}/mypage/memUpdate?memId=${auth.memId }&sideMenu='memUpdate'">회원정보관리</a></li>
+            <li><a href="${contextPath}/mypage/orderHistory?memId=${auth.memId }&sideMenu='orderHistory'">주문내역</a></li>
+			<li><a href="${contextPath}/mypage/memDelete?memId=${auth.memId }&sideMenu='memDelete'">회원탈퇴</a></li>
 		</ul>		
 	</nav>
 	
 	<!--main-->
 	<main>
-	<%@ include file="/WEB-INF/views/mypage/orderHistory.jsp"%>
+	<c:if test="${sideMenu eq 'memUpdate'}">
+		<%@ include file="/WEB-INF/views/mypage/memUpdate.jsp"%>
+	</c:if>
+	<c:if test="${sideMenu eq 'orderHistory'}">
+		<%@ include file="/WEB-INF/views/mypage/orderHistory.jsp"%>
+	</c:if>
+	<c:if test="${sideMenu eq 'memDelete'}">
+		<%@ include file="/WEB-INF/views/mypage/memDelete.jsp"%>
+	</c:if>
+	
 	</main>
 
 	<!-- side -->

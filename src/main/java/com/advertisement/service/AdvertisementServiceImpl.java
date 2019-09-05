@@ -11,6 +11,7 @@ import com.advertisement.domain.AdvertisementVO;
 
 @Service
 public class AdvertisementServiceImpl implements AdvertisementService{
+	
 	@Autowired
 	AdvertisementDao advertisementDao;
 		

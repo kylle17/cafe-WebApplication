@@ -18,26 +18,60 @@ import com.mypage.service.MypageServiceImpl;
 
 @Controller
 @RequestMapping(value="/mypage")
-public class MypageControllerImpl {
+public class MypageControllerImpl implements MypageController{
 
 	@Autowired
 	private MypageServiceImpl mypageServiceImpl;
 	
-	@RequestMapping(value="/orderHistory")
-	public ModelAndView orderHistory(@RequestParam("memId") String memId,HttpServletRequest request , HttpServletResponse response) {
+	
+	@RequestMapping(value="/memUpdate")
+	public ModelAndView memUpdate(@RequestParam("sideMenu") String sideMenu,HttpServletRequest request , HttpServletResponse response) {
 		
 		ModelAndView mov = new ModelAndView();
 		//String viewName=(String)request.getAttribute("viewName");  //임시로 삭제 
 		String viewName = "mypage/main";
 		mov.setViewName(viewName);
 		
-//		HttpSession session = request.getSession();		
-//		MemberVO memberVO = (MemberVO)session.getAttribute("memberInfo");
-//		String memId = memberVO.getMemId();
+		HttpSession session = request.getSession();		
+		session.setAttribute("sideMenu", sideMenu );
+
+		
+		return mov;
+	}
+	
+	
+	@RequestMapping(value="/orderHistory")
+	public ModelAndView orderHistory(@RequestParam("sideMenu") String sideMenu, @RequestParam("memId") String memId,HttpServletRequest request , HttpServletResponse response) {
+		
+		ModelAndView mov = new ModelAndView();
+		//String viewName=(String)request.getAttribute("viewName");  //임시로 삭제 
+		String viewName = "mypage/main";
+		mov.setViewName(viewName);
+		
+		HttpSession session = request.getSession();		
+		session.setAttribute("sideMenu", sideMenu );
+		
 		List<MypageVO> orderHistory = mypageServiceImpl.selectOrderHistoryList(memId);
 		
 		mov.addObject("orderHistory", orderHistory);
 		
 		return mov;
 	}
+	
+	
+	@RequestMapping(value="/memDelete")
+	public ModelAndView memDelete(@RequestParam("sideMenu") String sideMenu,HttpServletRequest request , HttpServletResponse response) {
+		
+		ModelAndView mov = new ModelAndView();
+		//String viewName=(String)request.getAttribute("viewName");  //임시로 삭제 
+		String viewName = "mypage/main";
+		mov.setViewName(viewName);
+		
+		HttpSession session = request.getSession();		
+		session.setAttribute("sideMenu", sideMenu );
+		
+		return mov;
+	}
+	
+	
 }

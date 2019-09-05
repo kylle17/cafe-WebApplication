@@ -19,7 +19,7 @@
 			<div class="profile">
 				<span class="userName"><b>${auth.memName} 님</b></span>
 				<!-- 마이페이지로 이동 or 관리자 모드 -->
-				<a href="${pageContext.request.contextPath}/mypage/orderHistory?memId=${auth.memId }" title="마이 페이지"> 마이페이지 
+				<a href="${pageContext.request.contextPath}/mypage/orderHistory?memId=${auth.memId }&sideMenu='memUpdate'" title="마이 페이지"> 마이페이지 
 					<%-- <img class="thumbnail" src="${auth.thumbnail}" alt="썸네일" /> --%>
 				</a>
 				<!-- 장바구니로 이동 --> 
