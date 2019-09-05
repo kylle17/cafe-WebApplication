@@ -5,9 +5,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>수정</title>
+	<%@ include file="/WEB-INF/views/commons/meta.jsp"%>
 </head>
 <body>
+<!-- header -->
+	<c:if test="${!empty auth}">
+		<%@ include file="/WEB-INF/views/commons/loginHeader.jsp" %>
+	</c:if>
+	<c:if test="${empty auth}">
+		<%@ include file="/WEB-INF/views/commons/noLoginHeader.jsp" %>
+	</c:if>
+	
+	<!--background-->
 	<form:form commandName="boardVO" method="POST">
 		<table border="1">
 			<tr>
@@ -46,5 +55,7 @@
 				href="<c:url value="/board/list" />">목록</a>
 		</div>
 	</form:form>
+	<!-- footer -->
+	<%@ include file="/WEB-INF/views/commons/footer.jsp"%>
 </body>
 </html>

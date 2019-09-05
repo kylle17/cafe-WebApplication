@@ -3,9 +3,21 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
-<html><head><title>새 글 쓰기</title></head>
+<html>
+<head>	
+<%@ include file="/WEB-INF/views/commons/meta.jsp"%>
+</head>
 <body>
 	<form:form commandName="boardVO" method="POST">
+	<!-- header -->
+	<c:if test="${!empty auth}">
+		<%@ include file="/WEB-INF/views/commons/loginHeader.jsp" %>
+	</c:if>
+	<c:if test="${empty auth}">
+		<%@ include file="/WEB-INF/views/commons/noLoginHeader.jsp" %>
+	</c:if>
+	
+	<!--background-->
 		<table border="1">
 			<tr>
 				<th><form:label path="title">제목</form:label></th>
@@ -36,5 +48,7 @@
 			<a href="<c:url value="/board/list" />">목록</a>
 		</div>
 	</form:form>
+		<!-- footer -->
+	<%@ include file="/WEB-INF/views/commons/footer.jsp"%>
 </body>
 </html>

@@ -4,9 +4,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>${boardVO.title}&nbsp내용</title>
+	<%@ include file="/WEB-INF/views/commons/meta.jsp"%>
 </head>
 <body>
+<!-- header -->
+	<c:if test="${!empty auth}">
+		<%@ include file="/WEB-INF/views/commons/loginHeader.jsp" %>
+	</c:if>
+	<c:if test="${empty auth}">
+		<%@ include file="/WEB-INF/views/commons/noLoginHeader.jsp" %>
+	</c:if>
+	
+	<!--background-->
         <table border="1">
                 <tr>
                         <th>제목</th>
@@ -35,5 +44,7 @@
                 <a href="<c:url value="/board/delete/${boardVO.seq}"/>">삭제</a> 
                 <a href="<c:url value="/board/list" />">목록</a>
         </div>
+        	<!-- footer -->
+	<%@ include file="/WEB-INF/views/commons/footer.jsp"%>
 </body>
 </html>
