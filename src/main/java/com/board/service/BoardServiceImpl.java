@@ -10,16 +10,11 @@ import com.board.domain.BoardVO;
 
 @Service
 public class BoardServiceImpl implements BoardService {
+	
 	@Autowired
 	private BoardDao boardDao;
 
-	public BoardDao getBoardDao() {
-		return boardDao;
-	}
-
-	public void setBoardDao(BoardDao boardDao) {
-		this.boardDao = boardDao;
-	}
+	
     @Override
 	public List<BoardVO> list() {
 		return boardDao.list();
