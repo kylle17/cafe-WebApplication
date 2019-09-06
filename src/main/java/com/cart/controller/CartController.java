@@ -39,7 +39,7 @@ public class CartController {
 	            // 있으면 update
 	            cartService.updateCart(vo);
 	        }
-	        return "redirect:/shop/cart/list.do";
+	        return "redirect:/cart/list.do";
 	    }
 
 	    // 2. 장바구니 목록
