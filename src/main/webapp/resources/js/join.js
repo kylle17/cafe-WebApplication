@@ -21,6 +21,14 @@ function joinCheck(){
 		return false;
 	}
 	
+	var memPhone = document.joinForm.memPhone.value;
+	var memPhoneRepExp = /^(010)([0-9]{4})([0-9]{4})$/i;
+	if(!memPhoneRepExp.test(memPhone)){
+		alert("010으로 시작하는 휴대폰번호를 입력하시오.");
+		document.joinForm.memPhone.focus();
+		return false;
+	}
+	
 	var email = document.joinForm.memEmail.value;
 	var repExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
 	if(!repExp.test(email)) {

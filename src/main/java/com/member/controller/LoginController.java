@@ -1,5 +1,8 @@
 package com.member.controller;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -47,6 +50,20 @@ public class LoginController {
 		
 		try {
 			MemberVO list = memberService.selectById(loginCommand.getMemId()); //memId에 대한 정보값이 list에 저장
+			if(list == null) { //아이디가 존재하지 않는 경우
+				try {
+					response.setCharacterEncoding("UTF-8");
+					PrintWriter pw = response.getWriter();
+					pw.println("<script>"
+								+ "alert('존재하지 않는 아이디입니다.');"
+							+ "</script>");
+					pw.flush();
+					return "login/login";
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+			
 			boolean passwordMatch = pwEncoder.matches(loginCommand.getMemPw(), list.getMemPw()); //BCryptPasswordEncoder.matches를 사용하여 html에서 가져온 값과 db에서 가져온 값을 match시킨다.
 			
 			if(passwordMatch) { //html에서 입력한 값과 db에서 가져온 값이 같으면
@@ -66,9 +83,20 @@ public class LoginController {
 				response.addCookie(cookie);
 				return "login/loginSuccess";
 			}
-			else { //html에서 입력한 값과 db에서 가져온 값이 다르면
-				return "login/login";
+			else { //html에서 입력한 비밀번호 값과 db에서 가져온 비밀번호 값이 다르면
+				try {
+					response.setCharacterEncoding("UTF-8");
+					PrintWriter pw = response.getWriter();
+					pw.println("<script>"
+								+ "alert('비밀번호가 일치하지 않습니다.');"
+								+ "history.go(-1);"
+							+ "</script>");
+					pw.flush();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 			}
+			return "login/login";
 		} catch (NullPointerException e) {
 			return "/";
 		}

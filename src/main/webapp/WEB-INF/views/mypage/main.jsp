@@ -46,7 +46,7 @@
 
 	<!-- side -->
 	<aside>
-	<div> 뭐시기 거시기 	</div>
+	<div> 환영합니당 	</div>
 	</aside>
 	</section>
 	

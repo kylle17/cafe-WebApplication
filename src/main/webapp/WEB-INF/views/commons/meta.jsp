@@ -21,26 +21,17 @@
 
 <!-- javascript -->
 <script src="${pageContext.request.contextPath}/resources/js/autoLogin.js"></script>  <!-- 자동 로그인 세션 삭제 -->
-
+<script src="${pageContext.request.contextPath}/resources/js/adminAd.js"></script>
 <!-- css -->
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/advertisement.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/common.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/main.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/loginForm.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/joinForm.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/addPiece.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/blog.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/blogPiece.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/postList.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/postDetail.css">
-
-
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/authCheck.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/dropMember.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/myPage.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/myOrder.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/orderHistory.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/side.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/adminAd.css">
+
 
 <!-- 파비콘 -->
 

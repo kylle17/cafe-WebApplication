@@ -7,12 +7,7 @@
 	
 	<!--background-->
 
-	<br><br>
-	<div>
-	주문내역 
-	</div>
-	<br><br>
-	
+	<h3>주문내역</h3><br><br>
 	<table class="orderHistory_table">
 		<tr style="background:#EAEAEA" >
 			<td>주문번호</td>

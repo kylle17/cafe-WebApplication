@@ -45,7 +45,7 @@ public class BoardController {
 	}
 	
 	//읽기 기능
-	@RequestMapping(value="/board/read/{seq}")
+	@RequestMapping(value="/read/{seq}")
 	public String read(Model model, @PathVariable int seq){
 	        model.addAttribute("boardVO", boardService.read(seq));
 	        return "/board/read";
@@ -89,14 +89,14 @@ public class BoardController {
 	}
 	
 	//글 수정
-	@RequestMapping(value="/board/edit/{seq}", method=RequestMethod.GET)
+	@RequestMapping(value="/edit/{seq}", method=RequestMethod.GET)
 	public String edit(@PathVariable int seq, Model model){
 	        BoardVO boardVO = boardService.read(seq);
 	        model.addAttribute("boardVO", boardVO);
 	        return "/board/edit";
 	}
 	        
-	@RequestMapping(value="/board/edit/{seq}", method=RequestMethod.POST)
+	@RequestMapping(value="/edit/{seq}", method=RequestMethod.POST)
 	public String edit(
 	        @Valid @ModelAttribute BoardVO boardVO, 
 	        BindingResult result, 
@@ -117,12 +117,12 @@ public class BoardController {
 	        return "/board/edit";
 	}
 	//글 삭제 요청을 처리할 메서드
-	@RequestMapping(value="/board/delete/{seq}", method=RequestMethod.GET)
+	@RequestMapping(value="/delete/{seq}", method=RequestMethod.GET)
 	public String delete(@PathVariable int seq, Model model){
 		model.addAttribute("seq", seq);
 		return "/board/delete";
 	}
-	@RequestMapping(value="/board/delete", method=RequestMethod.POST)
+	@RequestMapping(value="/delete", method=RequestMethod.POST)
 	public String delete(int seq, int pwd, Model model){
 		int rowCount;
 		BoardVO boardVO = new BoardVO();
