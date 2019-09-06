@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<%@ include file="/WEB-INF/views/commons/meta.jsp"%>
+	<%@ include file="/WEB-INF/views/commons/meta.jsp"%>	
 </head>
 <body>
 	<div class="flex_container">
