@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cart">
+    <!-- 1. 장바구니 추가 -->
+    <insert id="insertCart">
+        INSERT INTO cart(
+            cart_id, memID, PRODUCTID, amount
+        ) VALUES (
+            seq_cart.NEXTVAL, #{memID}, #{PRODUCTID}, #{amount}
+        )
+    </insert>
+    <!-- 2. 장바구니 목록 -->
+    <select id="listCart" resultType="com.cart.domain.CartVO">
+        SELECT
+            c.cart_id AS cartId, 
+            c.memID AS memID,
+            p.PRODUCTID As PRODUCTID,
+            m.memName AS memName, 
+            p.product_name AS productName, 
+            c.amount, 
+            p.product_price AS productPrice, 
+            (product_price * amount) money
+        FROM
+            tbl_member m, PRODUCT p, cart c
+        WHERE m.memID = c.memID
+            AND p.PRODUCTID = c.PRODUCTID
+            AND c.memID = #{memID}
+        ORDER BY
+            c.cart_id
+    </select>
+    <!-- 3. 장바구니 전체 금액 -->
+    <select id="sumMoney" resultType="int">
+        SELECT NVL(SUM(product_price * amount), 0) money
+        FROM cart c, PRODUCT p
+        WHERE c.PRODUCTID = p.PRODUCTID AND c.memID = #{memID}
+    </select>
+    <!-- 4. 장바구니 수정 -->
+    <update id="modifyCart">
+        UPDATE cart    
+        SET amount = #{amount} 
+        WHERE memID= #{memID} 
+        AND PRODUCTID = #{PRODUCTID}
+    </update>
+    <!-- 5. 장바구니 삭제 -->
+    <delete id="deleteCart">
+        DELETE FROM cart 
+        WHERE cart_id = #{cartId}
+    </delete>
+    <!-- 6. 장바구니에 동일한 상품 레코드 확인 -->
+    <select id="countCart" resultType="int">
+        SELECT COUNT(*)
+        FROM cart
+        WHERE memID= #{memID} 
+        AND PRODUCTID = #{PRODUCTID}
+    </select>
+    <!-- 7. 장바구니에 동일한 상품이 존재하면 수정 -->
+    <update id="updateCart">
+        UPDATE cart 
+        SET amount = amount + #{amount} 
+        WHERE memID= #{memID} 
+        AND PRODUCTID = #{PRODUCTID}
+    </update>
+</mapper>
