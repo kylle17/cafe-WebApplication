@@ -11,18 +11,10 @@
 
 	<div class="advertisement">
 		<c:forEach var="item" items="${advertisementList }">
-			<c:if test="${item.fileType=='main'   }">
 			<div class="advertisement_main">
-				<img width="1344" height="1008"
-				class="link"  src="${contextPath}/resources/image/${item.fileName }.jpg"> 								
-			</div>
-			</c:if>
-			<c:if test="${item.fileType!='main'   }">
-			<div class="advertisement_sub">
-				<img width="540" height="564"
-				class="link"  src="${contextPath}/resources/image/${item.fileName }.jpg"> 								
-			</div>
-			</c:if>			
+				<img width="1497" height="998"
+				class="link"  src="${contextPath}/resources/image/${item.fileName }"> 								
+			</div>		
   		</c:forEach>
   	</div>
  

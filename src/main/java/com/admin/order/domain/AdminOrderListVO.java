@@ -1,5 +1,6 @@
 package com.admin.order.domain;
 
+//@Alias("adminOrderListVO")
 public class AdminOrderListVO {
 
 		private String order_date;
@@ -45,6 +46,7 @@ public class AdminOrderListVO {
 		public void setOrder_state(String order_state) {
 			this.order_state = order_state;
 		}
+		
 			
 		
 }

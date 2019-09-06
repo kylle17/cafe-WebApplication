@@ -8,7 +8,14 @@
 <title>관리자 : 주문조회 </title>
 </head>
 <body>
+<!-- header --> 
+<!-- background -->
 	<h2>관리자 : 주문조회 </h2>
+	
+	<input type="button" onclick="location.href='${pageContext.request.contextPath}/adminOrderList?orderUrl=adminOrderState1'" value="주문조회">
+	<input type="button" onclick="location.href='${pageContext.request.contextPath}/adminOrderList?orderUrl=adminOrderState2'"value="결제완료">
+	<input type="button" onclick="location.href='${pageContext.request.contextPath}/adminOrderList?orderUrl=adminOrderState3'"value="배송준비중">
+	
 		<table>
 				<tr>
 					<td>주문일자</td>
@@ -17,12 +24,13 @@
 					<td>주문방법</td>
 					<td>주문금액</td>
 					<td>주문상태</td>
-					<td>상제페이지</td>
 				</tr>
 			<c:forEach items="${AdminOrderListVO}" var="a">
 				<tr>
 					<td>${a.order_date}</td>
-					<td>${a.orderNum}</td>
+					<td>
+					<a href="${pageContext.request.contextPath}/adminOrderDetail?ORDERNUM=${a.orderNum}">${a.orderNum}</a>
+					</td>
 					<td>${a.memID}</td>
 					<td>${a.order_method}</td>
 					<td>${a.order_price}</td>
@@ -31,5 +39,7 @@
 				</tr>
 			</c:forEach>
 		</table>
+		
+<!-- footer -->
 </body>
 </html>

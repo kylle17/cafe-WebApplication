@@ -1,0 +1,18 @@
+.adminAd_table {
+	border:1px solid black;
+	display: flex;
+    justify-content: center;  
+}
+
+.adminAd_table td {
+	height: 50px;
+	width: 100px;
+	border:1px solid black;
+	text-align: center;
+}
+
+.adminAd_table input {
+	height: 20px;
+	width: 40px;
+
+}

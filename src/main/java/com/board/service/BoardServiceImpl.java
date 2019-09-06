@@ -2,6 +2,7 @@ package com.board.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.board.dao.BoardDao;
@@ -9,15 +10,11 @@ import com.board.domain.BoardVO;
 
 @Service
 public class BoardServiceImpl implements BoardService {
+	
+	@Autowired
 	private BoardDao boardDao;
 
-	public BoardDao getBoardDao() {
-		return boardDao;
-	}
-
-	public void setBoardDao(BoardDao boardDao) {
-		this.boardDao = boardDao;
-	}
+	
     @Override
 	public List<BoardVO> list() {
 		return boardDao.list();

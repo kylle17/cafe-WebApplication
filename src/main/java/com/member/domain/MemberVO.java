@@ -9,7 +9,7 @@ public class MemberVO {
 	private String memName;
 	private String memGender;
 	private int memBirth;
-	private int memPhone;
+	private String memPhone;
 	private String memEmail;
 	private int memPostCode;
 	private String memRoadName;
@@ -45,10 +45,10 @@ public class MemberVO {
 	public void setMemBirth(int memBirth) {
 		this.memBirth = memBirth;
 	}
-	public int getMemPhone() {
+	public String getMemPhone() {
 		return memPhone;
 	}
-	public void setMemPhone(int memPhone) {
+	public void setMemPhone(String memPhone) {
 		this.memPhone = memPhone;
 	}
 	public String getMemEmail() {
@@ -75,7 +75,5 @@ public class MemberVO {
 	public void setMemDetail(String memDetail) {
 		this.memDetail = memDetail;
 	}
-	public boolean matchPassword(String memPw) {
-		return this.memPw.equals(memPw);
-	}
+	
 }
