@@ -40,7 +40,7 @@ function joinCheck(){
 
 function idCheck(memId){
 	var memIdRepExp = /^[a-z]{1}[0-9a-z]{3,9}$/i; //아이디 정규식(첫글자는 무조건 영어 소문자)
-	
+
     if(memId == ""){
         alert("아이디를 입력해주세요.");
         document.joinForm.memId.focus();

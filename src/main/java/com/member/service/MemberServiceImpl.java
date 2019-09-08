@@ -20,8 +20,19 @@ public class MemberServiceImpl implements MemberService {
 	public void write(MemberVO memberVO) {
 		memberDao.insert(memberVO);
 	}
+	//로그인
 	@Override
 	public MemberVO selectById(String memId) {
 		return memberDao.selectById(memId);
+	}
+	//회원정보수정
+	@Override
+	public void update(MemberVO memberVO) {
+		memberDao.update(memberVO);
+	}
+	//회원탈퇴
+	@Override
+	public void delete(MemberVO memberVO) {
+		memberDao.delete(memberVO);
 	}
 }
