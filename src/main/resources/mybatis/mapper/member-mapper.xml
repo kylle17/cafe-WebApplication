@@ -13,4 +13,20 @@
 	<select id="selectById" parameterType="String" resultType="memberVO">
 		select * from MEMBERINFO where memId=#{memId}	
 	</select>
+	
+	<!-- 마이페이지 - 회원정보수정 -->
+	<update id="update" parameterType="memberVO">
+		update MEMBERINFO set memPw=#{memPw}, memPhone=#{memPhone}, memEmail=#{memEmail}, memPostCode=#{memPostCode}, memRoadName=#{memRoadName}, memDetail=#{memDetail}
+		where memId=#{memId}
+	</update>
+	
+	<!-- 회원탈퇴 -->
+	<delete id="delete" parameterType="memberVO">
+		delete from MEMBERINFO where memId=#{memId}
+	</delete>
+	
+	<!-- 회원 전체 리스트 -->
+	<select id="list" resultType="memberVO">
+		select * from MEMBERINFO where memId not in ('system')
+	</select> 
 </mapper>

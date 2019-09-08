@@ -1,14 +1,8 @@
-package com.member.domain;
+package com.mypage.domain;
 
-import org.apache.ibatis.type.Alias;
-
-@Alias("memberVO")
-public class MemberVO {
+public class MemberUpdateCommand {
 	private String memId;
 	private String memPw;
-	private String memName;
-	private String memGender;
-	private String memBirth;
 	private String memPhone;
 	private String memEmail;
 	private String memPostCode;
@@ -26,24 +20,6 @@ public class MemberVO {
 	}
 	public void setMemPw(String memPw) {
 		this.memPw = memPw;
-	}
-	public String getMemName() {
-		return memName;
-	}
-	public void setMemName(String memName) {
-		this.memName = memName;
-	}
-	public String getMemGender() {
-		return memGender;
-	}
-	public void setMemGender(String memGender) {
-		this.memGender = memGender;
-	}
-	public String getMemBirth() {
-		return memBirth;
-	}
-	public void setMemBirth(String memBirth) {
-		this.memBirth = memBirth;
 	}
 	public String getMemPhone() {
 		return memPhone;

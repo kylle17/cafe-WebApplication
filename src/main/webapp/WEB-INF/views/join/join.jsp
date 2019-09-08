@@ -6,6 +6,11 @@
 <head>
 	<%@ include file="/WEB-INF/views/commons/meta.jsp"%>
 	<script src="${pageContext.request.contextPath}/resources/js/join.js"></script>
+	<style type="text/css">
+		form{
+			margin-left: 500px;
+		}
+	</style>
 </head>
 <body>
 	<!-- header -->
@@ -18,15 +23,15 @@
 	
 	<!--background-->
 	<form action="<c:url value="joinSuccess"/>" method="post" name="joinForm" onsubmit="return joinCheck()">
-		<input type="text" name="memId" placeholder="아이디를 입력해주세요" maxlength="10" autofocus/> <input type="button" value="아이디 중복확인" onclick="idCheck(this.form.memId.value)"><br>
-		<input type="password" name="memPw" placeholder="비밀번호를 입력해주세요"/><br>
-		<input type="password" name="memPwcon" placeholder="비밀번호를 확인해주세요"/><br>
-		<input type="text" name="memName" placeholder="이름을 입력해주세요" required/><br>
+		<input type="text" name="memId" placeholder="아이디를 입력해주세요" maxlength="10" autofocus/> <input type="button" value="중복확인" onclick="idCheck(this.form.memId.value)"><br>
+		<input type="password" name="memPw" placeholder="비밀번호를 입력해주세요" maxlength="20" /><br>
+		<input type="password" name="memPwcon" placeholder="비밀번호를 확인해주세요" /><br>
+		<input type="text" name="memName" placeholder="이름을 입력해주세요" required /><br>
 		<input type="radio" name="memGender" value="M" checked>남 <input type="radio" name="memGender" value="F" >여<br>
-		<input type="number" name="memBirth" placeholder="생년월일 입력해주세요(ex.19940101)" maxlength="8" required/><br>
-		<input type="text" name="memPhone" placeholder="휴대폰 번호를 입력해주세요(ex. 010xxxxxxxx)" maxlength="11" required/><br>
-		<input type="email" name="memEmail" placeholder="이메일을 입력해주세요"/> <input type="button" value="이메일인증"><br>
-		<input type="text" name="memPostCode" id="sample2_postcode" placeholder="우편번호">
+		<input type="text" name="memBirth" placeholder="생년월일 입력해주세요(ex.19940101)" maxlength="8" required /><br>
+		<input type="text" name="memPhone" placeholder="휴대폰 번호를 입력해주세요(ex. 010xxxxxxxx)" maxlength="11" required /><br>
+		<input type="email" name="memEmail" placeholder="이메일을 입력해주세요" /> <input type="button" value="이메일인증"><br>
+		<input type="text" name="memPostCode" id="sample2_postcode" placeholder="우편번호" maxlength="6">
 		<input type="button" onclick="sample2_execDaumPostcode()" value="우편번호 찾기"><br>
 		<input type="text" name="memRoadName" id="sample2_address" placeholder="주소"><br>
 		<input type="text" name="memDetail" id="sample2_detailAddress" placeholder="상세주소"><br>
