@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -43,14 +42,14 @@ public class AdminAdvertisementControllerImpl implements AdminAdvertisementContr
 	
 	
 	@RequestMapping(value="/update")
-	public ModelAndView adminAdUpdate(@RequestParam("sideMenu") String sideMenu ,HttpServletRequest request, HttpServletResponse response) throws Exception {
+	public ModelAndView adminAdUpdate(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ModelAndView mov = new ModelAndView();
 		
 		String viewName = "adminAd/update";
 		mov.setViewName(viewName);
 		
 		HttpSession session = request.getSession();		
-		session.setAttribute("sideMenu", sideMenu );
+
 		
 		
 //		List<AdvertisementVO> advertisementList = advertisementService.advertisementList();
