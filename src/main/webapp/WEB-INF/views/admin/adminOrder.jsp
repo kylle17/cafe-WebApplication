@@ -35,7 +35,7 @@
 					<td>${a.order_method}</td>
 					<td>${a.order_price}</td>
 					<td>${a.order_state}</td>
-					<td></td>	
+					<td><input type="button" onclick="location.href='${pageContext.request.contextPath}/adminOrderList'"value="Ãë¼Ò"></td>	
 				</tr>
 			</c:forEach>
 		</table>
