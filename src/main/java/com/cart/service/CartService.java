@@ -19,8 +19,8 @@ public class  CartService {
         cartDao.insert(vo);
     }
     // 2. 장바구니 목록
-    public List<CartVO> listCart(String userId) {
-        return cartDao.listCart(userId);
+    public List<CartVO> listCart(String memID) {
+        return cartDao.listCart(memID);
     }
     // 3. 장바구니 삭제
     public void delete(int cartId) {
@@ -31,8 +31,8 @@ public class  CartService {
         cartDao.modifyCart(vo);
     }
     // 5. 장바구니 금액 합계
-    public int sumMoney(String userId) {
-        return cartDao.sumMoney(userId);
+    public int sumMoney(String memID) {
+        return cartDao.sumMoney(memID);
     }
     // 6. 장바구니 상품 확인
     public int countCart(int productId, String memID) {

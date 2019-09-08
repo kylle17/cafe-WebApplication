@@ -22,7 +22,7 @@
     <table border="1">
         <tr>
             <td>
-                <img src="${path}/images/${vo.productUrl}" width="340" height="300">
+                <img src="${contextPath}/resources/image/${vo.productUrl}" width="340" height="300">
             </td>
             <td>
                 <table border="1" style="height: 300px; width: 400px;">
@@ -49,7 +49,7 @@
                                 </select>&nbsp;개
                                 <input type="submit" value="장바구니에 담기">
                             </form>
-                            <a href="${path}/shop/product/list.do">상품목록</a>
+                            <a href="${pageContext.request.contextPath}/shop/product/list.do">상품목록</a>
                         </td>
                     </tr>
                 </table>

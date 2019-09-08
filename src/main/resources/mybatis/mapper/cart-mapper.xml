@@ -5,7 +5,7 @@
 <mapper namespace="cart">
     <!-- 1. 장바구니 추가 -->
     <insert id="insertCart">
-        INSERT INTO cart(
+        INSERT INTO SYSTEM.cart(
             cart_id, memID, PRODUCTID, amount
         ) VALUES (
             seq_cart.NEXTVAL, #{memID}, #{PRODUCTID}, #{amount}
@@ -23,7 +23,7 @@
             p.product_price AS productPrice, 
             (product_price * amount) money
         FROM
-            tbl_member m, PRODUCT p, cart c
+            SYSTEM.MEMBERINFO m, SYSTEM.PRODUCT p, SYSTEM.CART c
         WHERE m.memID = c.memID
             AND p.PRODUCTID = c.PRODUCTID
             AND c.memID = #{memID}
