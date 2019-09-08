@@ -46,4 +46,13 @@
 	
 	
 	
+	
+	
+	<!-- 업로드 패스 설정 --> 
+<beans:bean class="java.lang.String" id="uploadPath">
+ <beans:constructor-arg value="D:\임지웅\lastfinal\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\lastFinal\src\main\webapp\resources" />
+</beans:bean>
+
+
+	
 </beans:beans>

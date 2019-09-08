@@ -21,7 +21,7 @@
 				<span class="userName"><b>${auth.memName} 님</b></span>
 				<!-- 마이페이지로 이동 or 관리자 모드 -->
 				<c:if test="${auth.memId eq 'system'}">
-					<a href="${pageContext.request.contextPath}/admin/adminAd?memId=${auth.memId }&sideMenu=adminAd">관리페이지</a>
+					<a href="${pageContext.request.contextPath}/adminAd/main?memId=${auth.memId }&sideMenu=adminAd">관리페이지</a>
 				</c:if>
 				<c:if test="${auth.memId ne 'system' }"> 
 					<a href="${pageContext.request.contextPath}/mypage/pwConfirm?memId=${auth.memId}" title="마이 페이지"> 마이페이지 

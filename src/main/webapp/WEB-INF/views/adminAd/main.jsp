@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<%@ include file="/WEB-INF/views/commons/meta.jsp"%>
+	<%@ include file="/WEB-INF/views/commons/meta.jsp"%>	
 </head>
 <body>
 	<div class="flex_container">
@@ -24,8 +24,8 @@
 	<!--side-->
 	<nav>  		
 		<ul>
-			<li><a href="${contextPath}/admin/adminAd?memId=${auth.memId }&sideMenu=adminAd">광고 관리</a></li>
-            <li><a href="${contextPath}/admin/member/adminMemberList?memId=${auth.memId }&sideMenu=adminMemberList">회원 관리</a></li>
+			<li><a href="${contextPath}/adminAd/main?memId=${auth.memId }&sideMenu=main">광고 관리</a></li>
+            <li><a href="${contextPath}/admin/admin?memId=${auth.memId }&sideMenu=admin">회원 관리</a></li>
 			<li><a href="${contextPath}/admin/admin?memId=${auth.memId }&sideMenu=admin">제품 관리</a></li>
 			<li><a href="${contextPath}/admin/admin?memId=${auth.memId }&sideMenu=admin">주문 관리</a></li>
 			<li><a href="${contextPath}/admin/admin?memId=${auth.memId }&sideMenu=admin">재고 관리</a></li>
@@ -38,28 +38,18 @@
 	
 	<!--main-->
 	<main>
-	<c:if test="${sideMenu eq 'adminAd'}">
-		<%@ include file="/WEB-INF/views/admin/adminAd.jsp"%>
-	</c:if>
-	<c:if test="${sideMenu eq 'adminMemberList'}">
-		<%@ include file="/WEB-INF/views/admin/member/adminMemberList.jsp"%><!-- 회원 관리 -->
-	</c:if>
-	<c:if test="${sideMenu eq 'admin'}">
-		<%@ include file="/WEB-INF/views/admin/adminAd.jsp"%>
-	</c:if>
-		<c:if test="${sideMenu eq 'admin'}">
-		<%@ include file="/WEB-INF/views/admin/adminAd.jsp"%>
-	</c:if>
-		<c:if test="${sideMenu eq 'admin'}">
-		<%@ include file="/WEB-INF/views/admin/adminAd.jsp"%>
-	</c:if>
-		<c:if test="${sideMenu eq 'admin'}">
-		<%@ include file="/WEB-INF/views/admin/adminAd.jsp"%>
-	</c:if>
-		<c:if test="${sideMenu eq 'admin'}">
-		<%@ include file="/WEB-INF/views/admin/adminAd.jsp"%>
-	</c:if>
-	
+		<c:if test="${sideMenu eq 'main'}">
+			<%@ include file="/WEB-INF/views/adminAd/list.jsp"%>
+		</c:if>
+		<c:if test="${sideMenu eq 'insert'}">
+			<%@ include file="/WEB-INF/views/adminAd/list.jsp"%>
+		</c:if>
+		<c:if test="${sideMenu eq 'update'}">
+			<%@ include file="/WEB-INF/views/adminAd/list.jsp"%>
+		</c:if>
+			<c:if test="${sideMenu eq 'delete'}">
+			<%@ include file="/WEB-INF/views/adminAd/list.jsp"%>
+		</c:if>
 	</main>
 
 
