@@ -1,5 +1,10 @@
 package com.member.controller;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -8,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.member.domain.JoinCommand;
 import com.member.domain.MemberVO;
 import com.member.service.MemberService;
 
@@ -32,12 +38,37 @@ public class MemberController {
 	}
 
 	@RequestMapping(value="/joinSuccess", method=RequestMethod.POST)
-	public String register(MemberVO memberVO) {
-		String pw = memberVO.getMemPw(); //memberVO에 저장된 password를 꺼내옴
-		String passwordEncoder = pwEncoder.encode(pw); //꺼내온 password를 암호화시킴
-		memberVO.setMemPw(passwordEncoder); //암호화된 password를 다시 memberVO에 넣음
-		memberService.write(memberVO);
-		return "join/joinSuccess";
+	public String register(JoinCommand joinCommand, MemberVO memberVO, HttpServletResponse response) throws IOException {
+		if(joinCommand.getMemId().equals("system") && joinCommand.getMemEmail().equals("kylle@naver.com")){
+			response.setCharacterEncoding("UTF-8");
+			PrintWriter print = response.getWriter();
+			print.println("<script>"
+						+ "alert('관리자로 회원가입되었습니다');"
+					+ "</script>");
+			print.flush();
+			
+			String pw = memberVO.getMemPw(); //memberVO에 저장된 password를 꺼내옴
+			String passwordEncoder = pwEncoder.encode(pw); //꺼내온 password를 암호화시킴
+			memberVO.setMemPw(passwordEncoder); //암호화된 password를 다시 memberVO에 넣음
+			memberService.write(memberVO);
+			return "join/joinSuccess";
+		}
+		else if(joinCommand.getMemId().equals("system") && !joinCommand.getMemEmail().equals("kylle@naver.com")) {
+			response.setCharacterEncoding("UTF-8");
+			PrintWriter print = response.getWriter();
+			print.println("<script>"
+						+ "alert('사용할 수 없는 아이디입니다.');"
+					+ "</script>");
+			print.flush();
+			return "join/join";
+		}
+		else {
+			String pw = memberVO.getMemPw(); //memberVO에 저장된 password를 꺼내옴
+			String passwordEncoder = pwEncoder.encode(pw); //꺼내온 password를 암호화시킴
+			memberVO.setMemPw(passwordEncoder); //암호화된 password를 다시 memberVO에 넣음
+			memberService.write(memberVO);
+			return "join/joinSuccess";			
+		}
 	}
 	
 	@RequestMapping(value="/idCheck")

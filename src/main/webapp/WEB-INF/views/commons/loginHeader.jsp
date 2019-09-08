@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <header>
 	<div class="container">
 		<!--위쪽 헤더-->
@@ -23,7 +24,8 @@
 					<a href="${pageContext.request.contextPath}/adminAd/main?memId=${auth.memId }&sideMenu=adminAd">관리페이지</a>
 				</c:if>
 				<c:if test="${auth.memId ne 'system' }"> 
-					<a href="${pageContext.request.contextPath}/mypage/orderHistory?memId=${auth.memId }&sideMenu='memUpdate'" title="마이 페이지"> 마이페이지 
+					<a href="${pageContext.request.contextPath}/mypage/pwConfirm?memId=${auth.memId}" title="마이 페이지"> 마이페이지 
+					<%-- <a href="${pageContext.request.contextPath}/mypage/memUpdate?memId=${auth.memId }&sideMenu=memUpdate" title="마이 페이지"> 마이페이지  --%>
 					<%-- <img class="thumbnail" src="${auth.thumbnail}" alt="썸네일" /> --%>
 				</a>
 				</c:if>
