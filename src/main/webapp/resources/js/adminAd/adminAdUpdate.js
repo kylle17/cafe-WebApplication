@@ -1,0 +1,2 @@
+opener.setUpdate(opener.selectUpdate);
+

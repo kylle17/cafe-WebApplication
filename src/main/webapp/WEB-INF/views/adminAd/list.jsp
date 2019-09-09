@@ -19,13 +19,13 @@
 		<c:forEach var="item" items="${advertisementList }">
 			<c:if test="${item.fileType ne 'mov' }">
 			<tr>			
-			<td id='ad_id'>${item.advertisement_id }</td>
+			<td><input type='text' id='ad_id' value=${item.advertisement_id }>${item.advertisement_id }</td>
 			<td><img width="200" height="130"
 				class="link"  src="${contextPath}/resources/image/${item.fileName }"></td>
 			<td>${item.fileType }</td>
 			<td>${item.fileName }</td>
-			<td><input id="adUpdate" type="button" value="수정"></td>
-			<td><input id="adDelete" type="button" value="삭제"></td>			
+			<td><input class="adUpdate" type="button" value="수정"></td>
+			<td><input class="adDelete" type="button" value="삭제"></td>			
 			</tr>
 			</c:if>
 			<c:if test="${item.fileType eq 'mov' }">
@@ -33,7 +33,7 @@
 			</c:if>
   		</c:forEach>
   	</table>
-	<script src="${pageContext.request.contextPath}/resources/js/adminAd.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/adminAd/adminAdList.js"></script>
 
 	
 
