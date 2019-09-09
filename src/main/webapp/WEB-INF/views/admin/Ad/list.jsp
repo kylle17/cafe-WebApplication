@@ -16,7 +16,9 @@
 			<td>수정</td>
 			<td>삭제</td>
 		</tr>
+		<c:set var="count" value="0"/>
 		<c:forEach var="item" items="${advertisementList }">
+			<c:set var="count" value="${count+1 }"/>
 			<c:if test="${item.fileType ne 'mov' }">
 			<tr>			
 			<td><input type='text' class='ad_id' value=${item.advertisement_id }>${item.advertisement_id }</td>
@@ -24,7 +26,7 @@
 				class="link"  src="${contextPath}/resources/image/${item.fileName }"></td>
 			<td>${item.fileType }</td>
 			<td>${item.fileName }</td>
-			<td><input class="adUpdate" type="button" value="수정"></td>
+			<td><input id="adUpdate${count }" type="button" value="수정"></td>
 			<td><input class="adDelete" type="button" value="삭제"></td>			
 			</tr>
 			</c:if>
