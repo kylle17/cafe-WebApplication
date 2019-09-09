@@ -17,17 +17,19 @@
 	
 	<!--background-->
 	<form action="<c:url value="loginSuccess"/>" method="post">
-		<input type="text" name="memId" placeholder="아이디를 입력해주세요" value="${loginId}" autofocus/><br>	
-		<input type="password" name="memPw" placeholder="비밀번호를 입력해주세요" /><br>
-		<c:choose>
-			<c:when test="${check == 1}">
-				<input type="checkbox" name="rememberId" checked/>아이디 기억<br>
-			</c:when>
-			<c:otherwise>
-				<input type="checkbox" name="rememberId"/>아이디 기억<br>
-			</c:otherwise>
-		</c:choose>
-		<input type="submit" value="로그인">
+		<ul>
+			<li><input type="text" name="memId" placeholder="아이디를 입력해주세요" value="${loginId}" autofocus/><br></li>	
+			<li><input type="password" name="memPw" placeholder="비밀번호를 입력해주세요" /><br></li>
+			<li><c:choose>
+				<c:when test="${check == 1}">
+					<input type="checkbox" name="rememberId" checked/>아이디 기억<br>
+				</c:when>
+				<c:otherwise>
+					<input type="checkbox" name="rememberId"/>아이디 기억<br>
+				</c:otherwise>
+			</c:choose></li>
+			<li><input type="submit" value="로그인"></li>
+		</ul>
 	</form>
 
 	<!-- footer -->
