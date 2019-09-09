@@ -7,7 +7,16 @@
 <head>
 	<%@ include file="/WEB-INF/views/commons/meta.jsp"%>
 	<script src="${pageContext.request.contextPath}/resources/js/join.js"></script>
-	
+	<link href="${pageContext.request.contextPath}/resources/css/join.css" rel="stylesheet" type="text/css">
+	<!-- <style type="text/css">
+		form{
+			margin: 0 auto;
+			width: 250px;
+		}
+		li{
+			line-height: 1.5;
+		}
+	</style> -->
 </head>
 <body>
 	<!-- header -->
@@ -21,18 +30,17 @@
 	<!--background-->
 	<form action="<c:url value="joinSuccess"/>" method="post" name="joinForm" onsubmit="return joinCheck()">
 		<ul>
-			<li><input type="text" name="memId" placeholder="아이디를 입력해주세요" maxlength="10" autofocus/> <input type="button" value="중복확인" onclick="idCheck(this.form.memId.value)"><br></li>
-			<li><input type="password" name="memPw" placeholder="비밀번호를 입력해주세요" maxlength="20" /><br></li>
-			<li><input type="password" name="memPwcon" placeholder="비밀번호를 확인해주세요" /><br></li>
-			<li><input type="text" name="memName" placeholder="이름을 입력해주세요" required /><br></li>
-			<li><input type="radio" name="memGender" value="M" checked>남 <input type="radio" name="memGender" value="F" >여<br></li>
-			<li><input type="text" name="memBirth" placeholder="생년월일 입력해주세요(ex.19940101)" maxlength="8" required /><br></li>
-			<li><input type="text" name="memPhone" placeholder="휴대폰 번호를 입력해주세요(ex. 010xxxxxxxx)" maxlength="11" required /><br></li>
-			<li><input type="email" name="memEmail" placeholder="이메일을 입력해주세요" /> <input type="button" value="이메일인증"><br></li>
-			<li><input type="text" name="memPostCode" id="sample2_postcode" placeholder="우편번호" maxlength="6"></li>
-			<li><input type="button" onclick="sample2_execDaumPostcode()" value="우편번호 찾기"><br></li>
-			<li><input type="text" name="memRoadName" id="sample2_address" placeholder="주소"><br></li>
-			<li><input type="text" name="memDetail" id="sample2_detailAddress" placeholder="상세주소"><br>
+			<li>아이디<br><input type="text" name="memId" maxlength="10" size="20" autofocus/> <input type="button" value="중복확인" style="width: 75px;" onclick="idCheck(this.form.memId.value)"></li>
+			<li>비밀번호<br><input type="password" name="memPw" maxlength="20" size="20" /></li>
+			<li>비밀번호 확인<br><input type="password" name="memPwcon" size="20" /></li>
+			<li>이름<br><input type="text" name="memName" size="20" /></li>
+			<li>성별<br><input type="radio" name="memGender" value="M" checked>남 <input type="radio" name="memGender" value="F" >여</li>
+			<li>생년월일<br><input type="text" name="memBirth" placeholder="ex) 19940101" maxlength="8" size="20" /></li>
+			<li>휴대폰<br><input type="text" name="memPhone" placeholder="ex) 010xxxxxxxx" maxlength="11" size="20" /></li>
+			<li>이메일<br><input type="email" name="memEmail" size="20" /> <input type="button" value="이메일인증" style="width: 75px;"></li>
+			<li>우편번호<br><input type="text" name="memPostCode" id="sample2_postcode" maxlength="6" size="20"> <input type="button" value="주소검색" style="width: 75px;" onclick="sample2_execDaumPostcode()"></li>
+			<li>도로명 주소<br><input type="text" name="memRoadName" id="sample2_address" size="20"></li>
+			<li>상세 주소<br><input type="text" name="memDetail" id="sample2_detailAddress" size="20">
 			
 			<!-- http://postcode.map.daum.net/guide 가져옴(iframe을 이용하여 레이어 띄우기) -->
 			<!-- iOS에서는 position:fixed 버그가 있음, 적용하는 사이트에 맞게 position:absolute 등을 이용하여 top,left값 조정 필요 -->
@@ -106,7 +114,8 @@
 			        element_layer.style.top = (((window.innerHeight || document.documentElement.clientHeight) - height)/2 - borderWidth) + 'px';
 			    }
 			</script></li>
-			<li><input type="submit" value="회원가입"></li>
+			<li><br></li>
+			<li><input type="reset" value="다시 작성" style="width: 100px; height: 30px;"> &nbsp; &nbsp;<input type="submit" value="회원가입" style="width: 100px; height: 30px;"></li>
 		</ul>
 	</form>
 

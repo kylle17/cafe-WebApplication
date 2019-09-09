@@ -5,6 +5,7 @@
 <html>
 <head>
 	<%@ include file="/WEB-INF/views/commons/meta.jsp"%>
+	<link href="${pageContext.request.contextPath}/resources/css/login.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<!-- header -->
@@ -18,8 +19,8 @@
 	<!--background-->
 	<form action="<c:url value="loginSuccess"/>" method="post">
 		<ul>
-			<li><input type="text" name="memId" placeholder="아이디를 입력해주세요" value="${loginId}" autofocus/><br></li>	
-			<li><input type="password" name="memPw" placeholder="비밀번호를 입력해주세요" /><br></li>
+			<li><input type="text" name="memId" placeholder="아이디를 입력해주세요" value="${loginId}" autofocus size="30"/><br></li>	
+			<li><input type="password" name="memPw" placeholder="비밀번호를 입력해주세요" size="30" /><br></li>
 			<li><c:choose>
 				<c:when test="${check == 1}">
 					<input type="checkbox" name="rememberId" checked/>아이디 기억<br>
@@ -28,7 +29,7 @@
 					<input type="checkbox" name="rememberId"/>아이디 기억<br>
 				</c:otherwise>
 			</c:choose></li>
-			<li><input type="submit" value="로그인"></li>
+			<li><span style="float: right;"><input type="submit" value="로그인" style="width: 75px; height: 20px;"></span></li>
 		</ul>
 	</form>
 
