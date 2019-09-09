@@ -27,7 +27,7 @@ public class AdminAdvertisementControllerImpl implements AdminAdvertisementContr
 	public ModelAndView adminAdMain(@RequestParam("sideMenu") String sideMenu ,HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ModelAndView mov = new ModelAndView();
 		
-		String viewName = "adminAd/main";
+		String viewName = "admin/Ad/main";
 		mov.setViewName(viewName);
 		
 		HttpSession session = request.getSession();		
@@ -45,7 +45,7 @@ public class AdminAdvertisementControllerImpl implements AdminAdvertisementContr
 	public ModelAndView adminAdUpdate(String sideMenu, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ModelAndView mov = new ModelAndView();
 		
-		String viewName = "adminAd/update";
+		String viewName = "admin/Ad/update";
 		mov.setViewName(viewName);
 		
 		HttpSession session = request.getSession();		

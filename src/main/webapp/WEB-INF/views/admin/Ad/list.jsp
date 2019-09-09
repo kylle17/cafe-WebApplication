@@ -19,7 +19,7 @@
 		<c:forEach var="item" items="${advertisementList }">
 			<c:if test="${item.fileType ne 'mov' }">
 			<tr>			
-			<td><input type='text' id='ad_id' value=${item.advertisement_id }>${item.advertisement_id }</td>
+			<td><input type='text' class='ad_id' value=${item.advertisement_id }>${item.advertisement_id }</td>
 			<td><img width="200" height="130"
 				class="link"  src="${contextPath}/resources/image/${item.fileName }"></td>
 			<td>${item.fileType }</td>
