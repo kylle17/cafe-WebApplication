@@ -20,10 +20,13 @@
  	<select id="selectOrderNum" parameterType="String" resultType="com.admin.order.domain.AdminOrderNumDeliveryVO" >
  	  	SELECT * 
 		FROM (
-			SELECT DELIVERY.del_num, DELIVERY.del_request_day, DELIVERY.del_complete_day, DELIVERY.del_place, 
-			ORDERLIST.orderNum, ORDERLIST.order_price, ORDERLIST.MEMID,ORDERLIST.ORDER_DATE, PAYMENT.order_account, PAYMENT.pay_method, PAYMENT.pay_date, PAYMENT.PAY_ASCRO
-			FROM ORDERLIST, DELIVERY, PAYMENT
-			WHERE ORDERLIST.orderNum = DELIVERY.orderNum AND ORDERLIST.orderNum = PAYMENT.orderNum
+			SELECT 
+				SYSTEM.DELIVERY.del_num, SYSTEM.DELIVERY.del_request_day, SYSTEM.DELIVERY.del_complete_day, SYSTEM.DELIVERY.del_place, 
+				SYSTEM.ORDERLIST.orderNum, SYSTEM.ORDERLIST.order_price, SYSTEM.ORDERLIST.MEMID,SYSTEM.ORDERLIST.ORDER_DATE, SYSTEM.PAYMENT.order_account, SYSTEM.PAYMENT.pay_method, SYSTEM.PAYMENT.pay_date, SYSTEM.PAYMENT.PAY_ASCRO
+			FROM 
+				SYSTEM.ORDERLIST, SYSTEM.DELIVERY, SYSTEM.PAYMENT
+			WHERE 
+				SYSTEM.ORDERLIST.orderNum = SYSTEM.DELIVERY.orderNum AND SYSTEM.ORDERLIST.orderNum = SYSTEM.PAYMENT.orderNum
 		)
 		WHERE 
 			orderNum=#{orderNum}
