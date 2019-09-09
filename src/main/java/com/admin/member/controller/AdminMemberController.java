@@ -34,7 +34,7 @@ public class AdminMemberController {
 			HttpServletRequest request) {
 		ModelAndView mov = new ModelAndView();
 		
-		String viewName = "admin/main";
+		String viewName = "admin/Ad/main";
 		mov.setViewName(viewName);
 		
 		List<MemberVO> memberList = adminMemberService.list();

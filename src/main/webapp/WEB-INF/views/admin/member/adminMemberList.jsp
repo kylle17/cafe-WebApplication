@@ -13,19 +13,19 @@
 	<form>
 	    <table border="1">
 	    	<tr>
-	            <th>ID</th>
-	            <th>이름</th>
-	            <th>휴대폰</th>
-	            <th>이메일</th>
-	            <th>회원삭제</th>
+	            <th width="100">ID</th>
+	            <th width="100">이름</th>
+	            <th width="150">휴대폰</th>
+	            <th width="175">이메일</th>
+	            <th width="75">추방</th>
 	        </tr>
 	        <c:forEach var="list" items="${memberList}" varStatus="loop">
 	            <tr>
-	                <td>${list.memId}</td>
-	                <td>${list.memName}</td>
-	                <td>${list.memPhone}</td>
-	                <td>${list.memEmail}</td>
-	                <td><input type="button" value="삭제" onclick="memberDelete('${list.memId}')"></td>
+	                <td>&nbsp;${list.memId}</td>
+	                <td>&nbsp;${list.memName}</td>
+	                <td>&nbsp;${list.memPhone}</td>
+	                <td>&nbsp;${list.memEmail}</td>
+	                <td><input type="button" value="삭제" onclick="memberDelete('${list.memId}')" style="width: 75px;"></td>
 	            </tr>
 	        </c:forEach>
 	    </table>	
