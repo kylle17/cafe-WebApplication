@@ -16,7 +16,7 @@ import com.advertisement.domain.AdvertisementVO;
 import com.advertisement.service.AdvertisementServiceImpl;
 
 @Controller
-@RequestMapping(value="/adminAd")
+@RequestMapping(value="/admin/Ad")
 public class AdminAdvertisementControllerImpl implements AdminAdvertisementController{
 
 	@Autowired

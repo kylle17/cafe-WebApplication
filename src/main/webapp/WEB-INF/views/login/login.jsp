@@ -29,7 +29,7 @@
 					<input type="checkbox" name="rememberId"/>아이디 기억<br>
 				</c:otherwise>
 			</c:choose></li>
-			<li><span style="float: right;"><input type="submit" value="로그인" style="width: 75px; height: 20px;"></span></li>
+			<li><span style="float: right; margin-right: 25px;"><input type="submit" value="로그인" style="width: 75px; height: 20px;"></span></li>
 		</ul>
 	</form>
 
