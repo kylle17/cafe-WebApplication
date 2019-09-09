@@ -25,8 +25,8 @@
 	<nav>  		
 		<ul>
 			<li><a href="${contextPath}/admin/adminAd?memId=${auth.memId }&sideMenu=adminAd">광고 관리</a></li>
-            <li><a href="${contextPath}/admin/member/adminMemberList?memId=${auth.memId }&sideMenu=adminMemberList">회원 관리</a></li>
-			<li><a href="${contextPath}/admin/admin?memId=${auth.memId }&sideMenu=admin">제품 관리</a></li>
+            <li><a href="${contextPath}/admin/admin?memId=${auth.memId }&sideMenu=admin">회원 관리</a></li>
+			<li><a href="${contextPath}/admin/admin?memId=${auth.memId }&sideMenu=adminGoods">제품 관리</a></li>
 			<li><a href="${contextPath}/admin/admin?memId=${auth.memId }&sideMenu=admin">주문 관리</a></li>
 			<li><a href="${contextPath}/admin/admin?memId=${auth.memId }&sideMenu=admin">재고 관리</a></li>
 			<li><a href="${contextPath}/admin/admin?memId=${auth.memId }&sideMenu=admin">매출 관리</a></li>
@@ -41,11 +41,11 @@
 	<c:if test="${sideMenu eq 'adminAd'}">
 		<%@ include file="/WEB-INF/views/admin/adminAd.jsp"%>
 	</c:if>
-	<c:if test="${sideMenu eq 'adminMemberList'}">
-		<%@ include file="/WEB-INF/views/admin/member/adminMemberList.jsp"%><!-- 회원 관리 -->
-	</c:if>
 	<c:if test="${sideMenu eq 'admin'}">
 		<%@ include file="/WEB-INF/views/admin/adminAd.jsp"%>
+	</c:if>
+	<c:if test="${sideMenu eq 'adminGoods'}">
+		<%@ include file="/WEB-INF/views/goods/main.jsp"%>
 	</c:if>
 		<c:if test="${sideMenu eq 'admin'}">
 		<%@ include file="/WEB-INF/views/admin/adminAd.jsp"%>
