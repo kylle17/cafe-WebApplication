@@ -15,6 +15,7 @@
 		<package name="com.order.domain" />
 		<package name="com.member.domain" />
 		<package name="com.mypage.domain" />
+		<package name="com.reservation.domain"/>
 	</typeAliases>
 	
 		

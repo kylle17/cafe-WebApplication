@@ -41,12 +41,6 @@
 		<c:if test="${sideMenu eq 'main'}">
 			<%@ include file="/WEB-INF/views/adminAd/list.jsp"%>
 		</c:if>
-		<c:if test="${sideMenu eq 'insert'}">
-			<%@ include file="/WEB-INF/views/adminAd/list.jsp"%>
-		</c:if>
-		<c:if test="${sideMenu eq 'update'}">
-			<%@ include file="/WEB-INF/views/adminAd/list.jsp"%>
-		</c:if>
 			<c:if test="${sideMenu eq 'delete'}">
 			<%@ include file="/WEB-INF/views/adminAd/list.jsp"%>
 		</c:if>
