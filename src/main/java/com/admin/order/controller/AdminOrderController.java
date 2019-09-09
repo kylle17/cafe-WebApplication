@@ -25,6 +25,7 @@ public class AdminOrderController {
 	private AdminOrderListService adminorderlistservice;
 	
 	@RequestMapping(value="/adminOrderList")
+	//리턴객체를 json , xml으로 자동변환 후  리턴 (jackson library / annotation -driven 설정필요)
     @ResponseBody
 	public ModelAndView AdminOrderListHandler(ModelAndView mav, ServletRequest request) {
 		String orderUrl = ((ServletRequest)request).getParameter("orderUrl");
