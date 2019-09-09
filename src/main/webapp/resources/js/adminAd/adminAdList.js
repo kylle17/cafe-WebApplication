@@ -1,6 +1,5 @@
 var adUpdate = document.getElementsByClassName('adUpdate');            
-
-var updateNum;
+var ad_id = document.getElementsByClassName('ad_id')
 
 for(var i=0; i < adUpdate.length; i++){
 	adUpdate[i].addEventListener('click', function(){ 
@@ -9,7 +8,6 @@ for(var i=0; i < adUpdate.length; i++){
 		var left = Math.ceil((window.screen.width - popupW)/2);
 		var top = Math.ceil((window.screen.height - popupH)/2);
 		win = window.open('update', 'update','width='+popupW+',height='+popupH+',left='+left+',top='+top+',scrollbars=yes,resizable=no,toolbar=no,titlebar=no,menubar=no,location=no');
-		setUpdateNum(i);
 	})
 }
 
@@ -17,8 +15,6 @@ for(var i=0; i < adUpdate.length; i++){
 
 
 function setUpdate(){
-	
-	win.document.getElementById('ad_id').value = adUpdate[updateNum].value;
 	win.document.getElementById('cancel').addEventListener('click',function(){
 		win.close();
 	})

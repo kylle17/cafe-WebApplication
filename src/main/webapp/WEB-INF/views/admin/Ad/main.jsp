@@ -39,10 +39,10 @@
 	<!--main-->
 	<main>
 		<c:if test="${sideMenu eq 'main'}">
-			<%@ include file="/WEB-INF/views/adminAd/list.jsp"%>
+			<%@ include file="/WEB-INF/views/admin/Ad/list.jsp"%>
 		</c:if>
 			<c:if test="${sideMenu eq 'delete'}">
-			<%@ include file="/WEB-INF/views/adminAd/list.jsp"%>
+			<%@ include file="/WEB-INF/views/admin/Ad/list.jsp"%>
 		</c:if>
 	</main>
 
