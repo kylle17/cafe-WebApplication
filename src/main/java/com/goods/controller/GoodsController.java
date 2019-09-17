@@ -28,7 +28,12 @@ public class GoodsController {
 	@Resource(name="uploadPath")
 	private String uploadPath;
 
-	 
+	// 상품 등록
+		@RequestMapping(value = "/main", method = RequestMethod.GET)
+		public void getGoodsRegister(Model model) throws Exception {
+		
+		}
+
 	// 상품 목록
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public void getGoodsList(Model model) throws Exception {
