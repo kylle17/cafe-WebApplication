@@ -7,13 +7,15 @@
 	
 	<!--background-->
 
-	<form action="${contextPath}/member/addMember.do" method="post">
-		<input type='text' name='광고id' id='ad_id' value=${ad_id }><br><br>
-		<input type='text' name='광고제목' id='ad_title'><br><br>
-		<input type='text' name='파일이름' id='fileName'><br><br>
-		<input id="confirm" type="button" value="확인" >
+	<form action="${contextPath}/admin/Ad/updateConfirm" method="post" enctype="multipart/form-data" >
+		<input type='hidden' name="ad_id1" id='ad_id'><br><br>
+		광고분류 :  <input type='hidden' name="ad_type1" id='ad_type' ><br><br>
+		파일이름 :  <input type='file' name="file_name1" id='file_name'><br><br>
+		<input type='date' name="ad_credate1" id='ad_credate' value='01/01/01'>
+		<input id="confirm" type="submit" value="확인" >
 		<input id="cancel" type="button" value="취소" >
 	</form>
+	
 	<script src="${pageContext.request.contextPath}/resources/js/adminAd/adminAdUpdate.js"></script>
 	
 

@@ -1,36 +1,67 @@
 
-document.getElementsByClassName('adUpdate1').addEventListener('click', adUpdate_listener(event));
-document.getElementsByClassName('adUpdate2').addEventListener('click', adUpdate_listener(event));
-document.getElementsByClassName('adUpdate3').addEventListener('click', adUpdate_listener(event));
-document.getElementsByClassName('adUpdate4').addEventListener('click', adUpdate_listener(event));
-document.getElementsByClassName('adUpdate5').addEventListener('click', adUpdate_listener(event));
+ad1 = document.getElementById('adUpdate1');
+ad2 = document.getElementById('adUpdate2');
+ad3 = document.getElementById('adUpdate3');
+ad4 = document.getElementById('adUpdate4');
+ad5 = document.getElementById('adUpdate5');
+ad6 = document.getElementById('adUpdate6');
 
 
+var list_ad_id = document.getElementsByClassName('ad_id');
+var list_ad_type = document.getElementsByClassName('ad_type');
+
+var selected_ad_id;
+var selected_ad_type;
 
 
 
 function adUpdate_listener(event){
-    switch(event.srcElement.id){
+    switch(event.target.id){
         case 'adUpdate1':
             winOpen();
-//            var ad_id = document.getElementsByClassName('ad_id');
-//            win.document.getElementById('ad_id') = ad_id[0].value;
+            selected_ad_id = list_ad_id[0].value;
+            selected_ad_type = list_ad_type[0].value;
             break;
         case 'adUpdate2':
             winOpen();
+            selected_ad_id = list_ad_id[1].value;
+            selected_ad_type = list_ad_type[1].value;
             break;
         case 'adUpdate3':
             winOpen();
+            selected_ad_id = list_ad_id[2].value;
+            selected_ad_type = list_ad_type[2].value;
             break;
         case 'adUpdate4':
             winOpen();
+            selected_ad_id = list_ad_id[3].value;
+            selected_ad_type = list_ad_type[3].value;
             break;
         case 'adUpdate5':
             winOpen();
+            selected_ad_id = list_ad_id[4].value;
+            selected_ad_type = list_ad_type[4].value;
+            break;
+        case 'adUpdate6':
+            winOpen();
+            selected_ad_id = list_ad_id[5].value;
+            selected_ad_type = list_ad_type[5].value;
             break;
             
     }
 }
+
+
+
+ad1.addEventListener('click', adUpdate_listener);
+ad2.addEventListener('click', adUpdate_listener);
+ad3.addEventListener('click', adUpdate_listener);
+ad4.addEventListener('click', adUpdate_listener);
+ad5.addEventListener('click', adUpdate_listener);
+ad6.addEventListener('click', adUpdate_listener);
+
+
+
 
 function winOpen(){
 	var popupW = 550;
@@ -44,7 +75,6 @@ function winOpen(){
 
 
 function setUpdate(){
-	win.document.getElementById('cancel').addEventListener('click',function(){
-		win.close();
-	})
+	win.document.getElementById('ad_id').value = selected_ad_id;
+	win.document.getElementById('ad_type').value = selected_ad_type;
 }	

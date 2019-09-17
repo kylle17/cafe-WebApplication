@@ -6,22 +6,22 @@
 <mapper namespace="mapper.advertisement">
 <!-- 리절트 맵 정의 -->	
 	<resultMap id="advertisementResult" type="AdvertisementVO">
-		<result property="advertisement_id" column="advertisement_id" />
-	    <result property="fileName" column="fileName" />
-	    <result property="fileType" column="fileType" />		
-		<result property="advertisement_credate" column="advertisement_credate" />
+		<result property="ad_id" column="ad_id" />
+	    <result property="file_name" column="file_name" />
+	    <result property="ad_type" column="ad_type" />		
+		<result property="ad_credate" column="ad_credate" />
 	</resultMap>	
-
-
 	
    
       <select id="selectAdvertisementList" parameterType="String" resultMap="advertisementResult"   >
         <![CDATA[
         select * 
 		from advertisement
-		order by advertisement_id asc
+		order by ad_id asc
 	    ]]>
 	</select>
+
+
 	
 	
 	

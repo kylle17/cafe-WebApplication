@@ -11,10 +11,19 @@
 
 	<div class="advertisement">
 		<c:forEach var="item" items="${advertisementList }">
+		<c:if test="${item.ad_type ne 'vod' }"> 
 			<div class="advertisement_main">
-				<img width="1497" height="998"
-				class="link"  src="${contextPath}/resources/image/${item.fileName }"> 								
-			</div>		
+				<img width="640" height="360"
+				class="link"  src="${contextPath}/resources/adData/${item.file_name }"> 								
+			</div>	
+		</c:if>
+		<c:if test="${item.ad_type eq 'vod' }">
+			<video width="640" height="360" autoplay loop>
+			  <source src="${contextPath}/resources/adData/${item.file_name }" type="video/mp4" >
+			</video>
+		</c:if>		
+			
+			
   		</c:forEach>
   	</div>
  

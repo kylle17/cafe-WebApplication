@@ -1,38 +1,38 @@
 package com.advertisement.domain;
 
-import java.sql.Date;
-
-
 public class AdvertisementVO {
-	private int advertisement_id;
-	private String fileName;
-	private String fileType;
-	private Date advertisement_credate;
-	public int getAdvertisement_id() {
-		return advertisement_id;
+	private String ad_id;
+	private String ad_type;
+	private String file_name;
+	private String ad_credate;
+	public String getAd_id() {
+		return ad_id;
 	}
-	public void setAdvertisement_id(int advertisement_id) {
-		this.advertisement_id = advertisement_id;
+	public void setAd_id(String ad_id) {
+		this.ad_id = ad_id;
 	}
-	public String getFileName() {
-		return fileName;
+	public String getAd_type() {
+		return ad_type;
 	}
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
+	public void setAd_type(String ad_type) {
+		this.ad_type = ad_type;
 	}
-	public String getFileType() {
-		return fileType;
+	public String getFile_name() {
+		return file_name;
 	}
-	public void setFileType(String fileType) {
-		this.fileType = fileType;
+	public void setFile_name(String file_name) {
+		this.file_name = file_name;
 	}
-	public Date getAdvertisement_credate() {
-		return advertisement_credate;
+	public String getAd_credate() {
+		return ad_credate;
 	}
-	public void setAdvertisement_credate(Date advertisement_credate) {
-		this.advertisement_credate = advertisement_credate;
+	public void setAd_credate(String ad_credate) {
+		this.ad_credate = ad_credate;
 	}
 	
+	
+
+
 	
 	
 

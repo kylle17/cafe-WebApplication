@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.adminAdvertisement">
+<!-- 리절트 맵 정의 -->	
+	<resultMap id="adAdvertisementResult" type="AdvertisementVO">
+		<result property="ad_id" column="ad_id" />
+		<result property="ad_type" column="ad_type" />			
+	    <result property="file_name" column="file_name" />
+		<result property="ad_credate" column="ad_credate" />
+	</resultMap>	
+	
+   
+      <select id="selectAdvertisementList" parameterType="String" resultMap="adAdvertisementResult"   >
+        <![CDATA[
+        select * 
+		from advertisement
+		order by ad_id asc
+	    ]]>
+	</select>
+	
+	
+	  <select id="updateAdvertisement" parameterType="String"  >
+        <![CDATA[
+			update advertisement
+		    set ad_id = #{ad_id}, 
+		        ad_type = #{ad_type, jdbcType=VARCHAR},
+		        file_name = #{file_name, jdbcType=VARCHAR}, 
+		        ad_credate = #{ad_credate, jdbcType=VARCHAR}
+		    where ad_id = ${ad_id}
+	    ]]>
+	</select>
+	
+
+</mapper>
