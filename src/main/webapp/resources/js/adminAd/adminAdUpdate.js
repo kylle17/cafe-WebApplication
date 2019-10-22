@@ -2,7 +2,6 @@ opener.setUpdate();
 
 
 
-
 document.getElementById('confirm').addEventListener('click',function(){
 	opener.location.reload();
 //	close();

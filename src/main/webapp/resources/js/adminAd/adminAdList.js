@@ -9,9 +9,11 @@ ad6 = document.getElementById('adUpdate6');
 
 var list_ad_id = document.getElementsByClassName('ad_id');
 var list_ad_type = document.getElementsByClassName('ad_type');
+var list_file_name = document.getElementsByClassName('file_name');
 
 var selected_ad_id;
 var selected_ad_type;
+var selected_file_name;
 
 
 
@@ -21,31 +23,37 @@ function adUpdate_listener(event){
             winOpen();
             selected_ad_id = list_ad_id[0].value;
             selected_ad_type = list_ad_type[0].value;
+            selected_file_name = list_file_name[0].value;
             break;
         case 'adUpdate2':
             winOpen();
             selected_ad_id = list_ad_id[1].value;
             selected_ad_type = list_ad_type[1].value;
+            selected_file_name = list_file_name[1].value;
             break;
         case 'adUpdate3':
             winOpen();
             selected_ad_id = list_ad_id[2].value;
             selected_ad_type = list_ad_type[2].value;
+            selected_file_name = list_file_name[2].value;
             break;
         case 'adUpdate4':
             winOpen();
             selected_ad_id = list_ad_id[3].value;
             selected_ad_type = list_ad_type[3].value;
+            selected_file_name = list_file_name[3].value;
             break;
         case 'adUpdate5':
             winOpen();
             selected_ad_id = list_ad_id[4].value;
             selected_ad_type = list_ad_type[4].value;
+            selected_file_name = list_file_name[4].value;
             break;
         case 'adUpdate6':
             winOpen();
             selected_ad_id = list_ad_id[5].value;
             selected_ad_type = list_ad_type[5].value;
+            selected_file_name = list_file_name[5].value;
             break;
             
     }
@@ -77,4 +85,5 @@ function winOpen(){
 function setUpdate(){
 	win.document.getElementById('ad_id').value = selected_ad_id;
 	win.document.getElementById('ad_type').value = selected_ad_type;
+	win.document.getElementById('file_name').value = selected_file_name;
 }	

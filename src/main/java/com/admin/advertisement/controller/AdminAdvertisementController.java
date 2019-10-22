@@ -15,7 +15,7 @@ public interface AdminAdvertisementController {
 
 	public ModelAndView adminAdUpdate(HttpServletRequest request, HttpServletResponse response) throws Exception;
 
-	public ModelAndView adminAdUpdateConfirm(AdvertisementVO advertisementVO, HttpServletRequest request, HttpServletResponse response) throws Exception ;
+	public ModelAndView adminAdUpdateConfirm(AdvertisementVO advertisementVO, MultipartHttpServletRequest request, HttpServletResponse response) throws Exception ;
 
 	
 }

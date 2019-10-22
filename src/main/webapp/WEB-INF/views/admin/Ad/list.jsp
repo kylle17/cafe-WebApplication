@@ -30,8 +30,8 @@
 			  <source src="${contextPath}/resources/adData/${item.file_name }" type="video/mp4" >
 			</video>
 			</c:if></td>
-			<td><input type="hidden" class="ad_type" value="${item.ad_type }">${item.ad_type }</td>
-			<td>${item.file_name }</td>
+			<td><input type="hidden" class="ad_type" value="${item.ad_type }">${item.ad_type }</td>			
+			<td><input type="hidden" class="file_name"  value="${item.file_name }">${item.file_name }</td>
 			<td><input id="adUpdate${count }" type="button" value="수정"></td>
 			<td><input class="adDelete" type="button" value="삭제"></td>			
 			</tr>			
